@@ -1,0 +1,19 @@
+body{
+    background-image: url("../../img/Camping.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+h1{
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.formulario{
+    opacity: 0.8;
+    border-radius: 40px;
+    
+}
+form > div{
+    opacity: 1;
+}

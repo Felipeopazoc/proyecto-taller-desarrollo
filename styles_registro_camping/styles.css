@@ -1,0 +1,20 @@
+body{
+    background-image: url("../img/Camping.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea{
+    height: 100px;
+}
+.formulario{
+    background-color: rgb(148, 181, 210);
+    opacity: 0.9;
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    
+}
