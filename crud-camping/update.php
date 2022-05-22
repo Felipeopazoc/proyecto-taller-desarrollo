@@ -15,6 +15,8 @@
         if(isset($_GET["id"])){
             $id = $_GET["id"];
         }
+
+        
     ?>
     <div class="w-100 d-flex flex-column">
         <nav class="navbar navbar-expand-lg navbar-light bg-black text-white h-50">
@@ -26,28 +28,40 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active text-white " aria-current="page" href="index.php">Inicio</a>
+                                    <a class="nav-link active text-white " aria-current="page" href="../index.php">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white " href="registro_camping.php">Registro de camping</a>
+                                    <a class="nav-link text-white " href="../registro_camping.php">Registro de camping</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#">Listado de campings</a>
+                                    <a class="nav-link text-white" href="../mostrar_campings.php">Listado de campings</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-                <h1 class="text-center">Formulario para modificar camping</h1>
+                <h1 class="text-center">Actualización de datos de camping seleccionado</h1>
                 <form class="w-75 m-auto" action="">
-                     <div class="col-4 mb-3">
+                     <div class="col-6 mb-3">
                          <label class="label-form">Id camping</label>
                          <input type="number" name="id" value=<?php echo $id ?> class="form-control" disabled>
                      </div>
-                     <div class="">
-
+                     <div class="col-6 mb-3">
+                          <label for="" class="label-form">Nombre Camping</label>
+                          <input type="text" class="form-control" name="nombre" >
                      </div>
-
+                     <div class="col-6 mb-3">
+                          <label for="" class="label-form">Nombre Camping</label>
+                          <input type="text" class="form-control" name="nombre" >
+                     </div>
+                     <div class="col-6 mb-3">
+                          <label for="" class="label-form">Nombre Camping</label>
+                          <input type="text" class="form-control" name="nombre" >
+                     </div>
+                     <div class="col-6 mb-3">
+                          <label for="" class="label-form">Nombre Camping</label>
+                          <input type="text" class="form-control" name="nombre" >
+                     </div>
                 </form>
     </div>
 </body>

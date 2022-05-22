@@ -50,19 +50,41 @@
                 <label class="form-label" for="">Dirección: </label>
                 <input type="text" required class="form-control" name="direccion">
             </div>
-            
+            <div class="col-3 mb-2 ">
+                <label class="form-label" for="">Teléfono: </label>
+                <input type="number" required class="form-control" name="telefono">
+            </div>
+          
+         
             <div class="col-6 mb-2">
                 <label class="form-label" for="">Correo: </label>
                 <input type="email" required class="form-control" name="email">
             </div>
-            <div class="col-6 mb-2">
+         
+            <div class="col-4 mb-2">
+                <label class="form-label" for="">Region: </label>
+                <select name="select_region" id="" class="form-select">
+                    <option value="">Región del bio bio</option>
+                </select>
+            </div>
+            <div class="col-6 mt-2">
+                <label class="form-label" for="">Comuna: </label>
+                <select name="select_region" id="" class="form-select">
+                    <option value="">Cabrero</option>
+                    <option value="">Yumbel</option>
+                </select>
+            </div>
+            <div class="col-6 mt-2">
+                <label for="" class="form-label">Comienzo Temporada</label>
+                <input type="date" name="inicio" class="form-control">
+            </div>
+            <div class="col-6 mt-2">
+                <label for="" class="form-label">Fin Temporada</label>
+                <input type="date" class="form-control" name="fin">
+            </div>
+            <div class="col-6 mb-2 mt-2">
                 <label class="form-label" for="">Descripción: </label>
                 <textarea class="form-control" name="descripcion" required ></textarea>
-            </div>
-
-            <div class="col-6 mt-2 ">
-                <label class="form-label" for="">Teléfono: </label>
-                <input type="number" required class="form-control" name="telefono">
             </div>
 
             <div class="col-5 mt-2 row m-auto p-3">
