@@ -40,7 +40,8 @@
                         </div>
                     </div>
                 </nav>
-                <h1 class="text-center">Actualización de datos de camping seleccionado</h1>
+                <h1 class="text-center">Estamos en desarrollo :(</h1>
+                <!---
                 <form class="w-75 m-auto" action="">
                      <div class="col-6 mb-3">
                          <label class="label-form">Id camping</label>
@@ -63,6 +64,7 @@
                           <input type="text" class="form-control" name="nombre" >
                      </div>
                 </form>
+                -->
     </div>
 </body>
 </html>

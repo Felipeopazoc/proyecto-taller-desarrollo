@@ -8,6 +8,8 @@
         $descripcion = $_POST["descripcion"];
         $direccion = $_POST["direccion"];
         $telefono = $_POST["telefono"];
+        $fecha_inicio = $_POST["inicio"];
+        $fecha_fin = $_POST["fin"];
         $id_random = rand(1,100000);
         //Sanitizamos las variables
         $nombre = trim($nombre);
@@ -22,7 +24,7 @@
         $direccion = htmlspecialchars(strip_tags($direccion));
 
         
-        $sql = "insert into camping values($id_random,'$nombre',$cantidad,'$descripcion','$direccion','$correo',$telefono,1,1)";
+        $sql = "insert into camping values($id_random,'$nombre',$cantidad,'$descripcion','$direccion','$correo',$telefono,'$fecha_inicio','$fecha_fin',1,1)";
 
         $conn ->query($sql);
         echo $sql;

@@ -31,7 +31,8 @@
                 </div>
             </div>
         </nav>
-        <h1>Estamos en home</h1>
+        <h1>Estamos en desarrollo, por favor hacer click en registrar camping en la barra de navegación</h1>
+
     </div>
 </body>
 </html>

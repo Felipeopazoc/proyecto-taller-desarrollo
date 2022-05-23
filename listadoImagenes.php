@@ -41,9 +41,11 @@
                         </div>
                     </div>
                 </nav>
-                <h1 class="text-center text-white">Listado de imagenes de camping registrado</h1>
-                <!-- Button to Open the Modal -->
-                    
+                <div class="w-75 m-auto mb-3 mt-3 d-flex">
+                     <h1 class="text-center text-white">Listado de imagenes de camping registrado</h1>
+                     <button type="button" class="w-25 m-auto mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>
+
+                </div>    
 
                     <!-- The Modal -->
                     <div class="modal" id="myModal">
@@ -108,7 +110,7 @@
                 ?>
             </tbody>
         </table>
-        <button type="button" class="w-25 m-auto mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>
+        
     </div>
 </body>
 </html>

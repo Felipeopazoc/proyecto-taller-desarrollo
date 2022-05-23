@@ -33,8 +33,8 @@
                     </div>
                 </div>
             </nav>
-            <h1 class="text-center text-white">Listado de campings registrados</h1>
-            <table class="table table-hover bg-light">
+            <h1 class="text-center text-white mt-3">Listado de campings registrados</h1>
+            <table class="table table-hover w-100 bg-light">
                 <thead>
                     <th>ID</th>
                     <th>Nombre</th>
@@ -72,7 +72,7 @@
                         }
                     }else{
                         ?>
-                          <p class="alert alert-danger text-center m-auto w-50">No hay campings registrados</p>
+                          <p class="alert alert-danger text-center m-auto w-50 mb-3">No hay campings registrados</p>
                         <?php
                     }
 
@@ -81,7 +81,7 @@
                 </tbody>
              
             </table>
-            <footer class="text-center w-100 bg-black text-white p-3">Todos los derechos reservados &copy 2022</footer>
+           
         </div>
 </body>
 </html>
