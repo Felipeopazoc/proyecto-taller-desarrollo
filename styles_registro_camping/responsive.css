@@ -1,0 +1,11 @@
+@media (max-width:425px) {
+    h1{
+        font-size: 24px;
+    }
+}
+
+@media (max-width:977px){
+    .li{
+        font-size: 24px;
+    }
+}

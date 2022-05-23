@@ -7,6 +7,21 @@ body{
 }
 h1{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 70px;
+}
+
+.li{
+    font-size: 23px;
+}
+.box{
+    display: flex;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 75%;
+    margin: 0px auto;
+}
+.box > button{
+    width: 30%;
+
 }

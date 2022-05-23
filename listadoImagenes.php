@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles_listadoimagenes/styles.css">
+    <link rel="stylesheet" href="styles_listadoimagenes/responsive.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
     
     ?>
     <div class="w-100 d-flex flex-column">
-        <nav class="navbar navbar-expand-lg navbar-light bg-black text-white h-50">
+        <nav class="navbar navbar-expand-lg navbar-light text-white h-50">
                     <div class="container-fluid">
                         <a class="navbar-brand text-white" href="#"> <img src="img/camping.png" width="50px" alt=""> </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,22 +29,22 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
+                                <li class="nav-item text-center li">
                                     <a class="nav-link active text-white " aria-current="page" href="index.php">Inicio</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item li text-center">
                                     <a class="nav-link text-white " href="registro_camping.php">Registro de camping</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item li text-center">
                                     <a class="nav-link text-white" href="mostrar_campings.php">Listado de campings</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-                <div class="w-75 m-auto mb-3 mt-3 d-flex">
+                <div class="box ">
                      <h1 class="text-center text-white">Listado de imagenes de camping registrado</h1>
-                     <button type="button" class="w-25 m-auto mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>
+                     <button type="button" class=" m-auto mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>
 
                 </div>    
 
@@ -104,7 +105,7 @@
                         }
                     }else{
                         ?>
-                            <p class="w-50 m-auto mt-2 mb-3 text-center alert alert-danger">El camping no tiene imágenes</p>
+                            <p class="col-sm-10 m-auto mt-2 mb-3 text-center alert alert-danger">El camping no tiene imágenes</p>
                         <?php
                     }
                 ?>

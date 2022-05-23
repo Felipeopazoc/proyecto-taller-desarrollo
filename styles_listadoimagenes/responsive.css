@@ -1,0 +1,30 @@
+@media(max-width:921px){
+    .box{
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .box>button{
+        margin-top: -10px;
+    }
+}
+@media(max-width:729px){
+    .box > button{
+        width: 35%;
+    }
+}
+@media(max-width:615px){
+    .box{
+        width: 100%;
+    }
+}
+@media(max-width:459px){
+    .box > h1{
+        font-size: 20px;
+    }
+    .box > button{
+        width: 40%;
+    }
+    .alerta{
+        width: 75%;
+    }
+}

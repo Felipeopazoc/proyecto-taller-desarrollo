@@ -19,20 +19,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                             <a class="nav-link active text-white " aria-current="page" href="#">Inicio</a>
+                             <a class="nav-link active text-white li " aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                              <a class="nav-link text-white " href="registro_camping.php">Registro de camping</a>
+                              <a class="nav-link text-white li" href="registro_camping.php">Registro de camping</a>
                         </li>
                         <li class="nav-item">
-                             <a class="nav-link text-white" href="mostrar_campings.php">Listado de campings</a>
+                             <a class="nav-link text-white li" href="mostrar_campings.php">Listado de campings</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <h1>Estamos en desarrollo, por favor hacer click en registrar camping en la barra de navegación</h1>
-
-    </div>
-</body>
-</html>
