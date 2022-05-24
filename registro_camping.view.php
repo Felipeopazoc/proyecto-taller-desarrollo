@@ -26,9 +26,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
-                        <li class="nav-item text-center li ">
-                             <a class="nav-link active text-white " aria-current="page" href="index.php">Inicio</a>
-                        </li>
                         <li class="nav-item text-center li">
                               <a class="nav-link text-white " href="#">Registro de camping</a>
                         </li>

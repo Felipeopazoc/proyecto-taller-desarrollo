@@ -29,11 +29,9 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item text-center li">
-                                    <a class="nav-link active text-white " aria-current="page" href="index.php">Inicio</a>
-                                </li>
+                              
                                 <li class="nav-item li text-center">
-                                    <a class="nav-link text-white " href="registro_camping.php">Registro de camping</a>
+                                    <a class="nav-link text-white " href="index.php">Registro de camping</a>
                                 </li>
                                 <li class="nav-item li text-center">
                                     <a class="nav-link text-white" href="mostrar_campings.php">Listado de campings</a>

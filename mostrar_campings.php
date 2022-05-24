@@ -22,10 +22,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto text-center mb-2 mb-lg-0">
                             <li class="nav-item li">
-                                <a class="nav-link active text-white " aria-current="page" href="index.php">Inicio</a>
-                            </li>
-                            <li class="nav-item li">
-                                <a class="nav-link text-white " href="registro_camping.php">Registro de camping</a>
+                                <a class="nav-link text-white " href="index.php">Registro de camping</a>
                             </li>
                             <li class="nav-item li">
                                 <a class="nav-link text-white" href="#">Listado de campings</a>
@@ -65,7 +62,6 @@
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[12])) ?></td>
                                  <td>
                                      <a class="btn btn-primary mb-2" href="listadoImagenes.php?id=<?php echo $camping[0] ?>">Imágenes</a>
-                                     <a class="btn btn-success mb-2" href="crud-camping/update.php?id=<?php echo $camping[0] ?>">Modificar</a>
                                      <a class="btn btn-danger mb-2" href="crud-camping/delete.php?id=<?php echo $camping[0] ?>">Eliminar</a>
                                 </td>
                              </tr>
