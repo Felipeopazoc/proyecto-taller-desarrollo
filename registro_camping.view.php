@@ -13,7 +13,9 @@
 </head>
 <body>
   <?php 
-      $hoy=date("Y-m-d"); ?>
+      $hoy=date("Y-m-d");
+       include("conexion_bd/conexion.php");
+      ?>
    <div class="w-100 d-flex flex-column justify-content-center">
         <!--BARRA DE NAVEGACION-->
         <nav class="navbar navbar-expand-lg navbar-light  text-white h-50">
@@ -71,11 +73,22 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 ">
                 <label class="form-label" for="">Comuna: </label>
-                <select name="select_region" id="" class="form-select">
-                    <option value="">Cabrero</option>
+                <select name="select_comuna" id="" class="form-select">
+                    <?php
+                        $sql = "select * from ciudad order by nombre";
+                        $resultado = mysqli_query($conn,$sql);
+                        $filas = mysqli_num_rows($resultado);
+                        if($filas){
+                            while($ciudad = $resultado->fetch_row()){
+                                ?>
+                                    <option value="<?php echo $ciudad[0]?>"><?php echo $ciudad[1] ?></option>
+                                <?php
+                            }
+                        }
+                    ?>
                 </select>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <label for="" class="form-label">Comienzo Temporada</label>
                 <input type="date" required name="inicio" min=<?php echo $hoy;?> class="form-control">
             </div>

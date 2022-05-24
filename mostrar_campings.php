@@ -62,11 +62,11 @@
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[4])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[5])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[6])) ?></td>
-                                 <td><?php echo htmlspecialchars (strip_tags ($camping[10])) ?></td>
+                                 <td><?php echo htmlspecialchars (strip_tags ($camping[12])) ?></td>
                                  <td>
                                      <a class="btn btn-primary mb-2" href="listadoImagenes.php?id=<?php echo $camping[0] ?>">Imágenes</a>
                                      <a class="btn btn-success mb-2" href="crud-camping/update.php?id=<?php echo $camping[0] ?>">Modificar</a>
-                                     <a class="btn btn-danger" href="crud-camping/delete.php?id=<?php echo $camping[0] ?>">Eliminar</a>
+                                     <a class="btn btn-danger mb-2" href="crud-camping/delete.php?id=<?php echo $camping[0] ?>">Eliminar</a>
                                 </td>
                              </tr>
                             <?php

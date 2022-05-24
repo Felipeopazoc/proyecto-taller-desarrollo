@@ -16,6 +16,7 @@ if(isset($_POST["submit"])){
     $fecha_inicio = $_POST["inicio"];
     $fecha_fin = $_POST["fin"];
     $id_random = rand(1,100000);
+    $comuna = $_POST["select_comuna"];
     //Sanitizamos las variables
     $nombre = trim($nombre);
     $correo = trim($correo);
@@ -56,7 +57,7 @@ if(isset($_POST["submit"])){
          ?>
             <p class="alert alert-success w-75 m-auto text-center">Camping registrado correctamente, redireccionando.....</p>
          <?php
-             $sql = "insert into camping values($id_random,'$nombre',$cantidad,'$descripcion','$direccion','$correo',$telefono,'$fecha_inicio','$fecha_fin',1,1)";
+             $sql = "insert into camping values($id_random,'$nombre',$cantidad,'$descripcion','$direccion','$correo',$telefono,'$fecha_inicio','$fecha_fin',$comuna,1)";
              $conn ->query($sql);
              echo"<script language='javascript'>window.location='listadoImagenes.php?id=$id_random'</script>;";
             
