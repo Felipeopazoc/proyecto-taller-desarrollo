@@ -63,7 +63,7 @@ if(isset($_POST["submit"])){
             
         }else{
          ?>
-            <p class="alert alert-danger w-75 m-auto text-center">Ingrese de nuevo la información</p>
+            <p class="alert alert-danger w-50 mb-2 m-auto text-center"> <strong>Ingrese de nuevo la información </strong></p>
         <?php
      }
   
@@ -85,7 +85,7 @@ function validarNombre($nombre){
             if(strcmp($nombre,strtoupper($nombre_camping[1]))==0){
                  $existe = true;
                  ?>
-                    <p class="alert alert-danger w-75 mb-2 m-auto text-center">Este nombre ya está registrado</p>
+                    <p class="alert alert-danger w-50 mb-2 m-auto text-center">Este <strong>nombre </strong> ya está registrado</p>
                  <?php
                  break;
             }
@@ -106,7 +106,7 @@ function validarCorreo($correo){
             if(strcmp($correo,strtoupper($correo_camping[5]))==0){
                  $existe = true;
                  ?>
-                 <p class="alert alert-danger w-75 mb-2 m-auto text-center">Este correo ya está registrado</p>
+                 <p class="alert alert-danger w-50 mb-2 m-auto text-center">Este <strong>correo</strong> ya está registrado</p>
                 <?php
                  break;
             }
@@ -126,7 +126,7 @@ function validarDireccion($direccion){
             if(strcmp($direccion,strtoupper($direccion_camping[4]))==0){
                 $existe = true;
                 ?>
-                <p class="alert alert-danger w-75 mb-2 m-auto text-center">Esta direccion ya está registrada</p>
+                <p class="alert alert-danger w-50 mb-2 m-auto text-center">Esta <strong> dirección </strong> ya está registrada</p>
                 <?php
                 break;
             }
@@ -141,7 +141,7 @@ function validarTelefono($telefono){
         return true;
      }else{
         ?>
-        <p class="alert alert-danger w-75 mb-2 m-auto text-center">Este teléfono debe tener 9 dígitos</p>
+        <p class="alert alert-danger w-50 mb-2 m-auto text-center">Este <strong> teléfono </strong> debe tener 9 dígitos</p>
         <?php
         return false;
      }
@@ -151,7 +151,7 @@ function validarFechas($inicio,$final){
         return true;
      }else{
          ?>
-            <p class="alert alert-danger w-75 mb-2 m-auto text-center">La fecha de inicio no debe ser mayor que la fecha de término de temporada</p>
+            <p class="alert alert-danger w-50 mb-2 m-auto text-center">La <strong>fecha de inicio </strong> no debe ser mayor que la <strong>fecha de término </strong> de temporada</p>
          <?php
          return false;
      }

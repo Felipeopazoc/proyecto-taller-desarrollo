@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php 
+    <?php
     include("conexion_bd/conexion.php");
     $id = "";
     if(isset($_GET["id"])){
