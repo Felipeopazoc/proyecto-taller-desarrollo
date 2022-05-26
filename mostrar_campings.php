@@ -32,7 +32,7 @@
                 </div>
             </nav>
             <h1 class="text-center text-white mt-3">Listado de campings registrados</h1>
-            <table class="table table-hover w-100 bg-light">
+            <table class="table table-hover w-75 m-auto bg-light">
                 <thead>
                     <th>ID</th>
                     <th>Nombre</th>
@@ -41,11 +41,12 @@
                     <th>Correo</th>
                     <th>Teléfono</th>
                     <th>Comuna</th>
+                    <th>Estado</th>
                     <th>Acciones</th>
                 </thead>
                 <tbody>
                     <?php
-                    $sql = "select * from camping ca, ciudad c where ca.cod_ciudad = c.id_ciudad ";
+                    $sql = "select * from camping ca, ciudad c, estado e where ca.cod_ciudad = c.id_ciudad and e.id_estado = ca.id_estado ";
                     $resultado = mysqli_query($conn, $sql);
                     $filas = mysqli_num_rows($resultado);
 
@@ -59,7 +60,8 @@
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[4])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[5])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[6])) ?></td>
-                                 <td><?php echo htmlspecialchars (strip_tags ($camping[12])) ?></td>
+                                 <td><?php echo htmlspecialchars (strip_tags ($camping[12]))?></td>
+                                 <td><?php echo htmlspecialchars (strip_tags ($camping[15]))?></td>
                                  <td>
                                      <a class="btn btn-primary mb-2" href="listadoImagenes.php?id=<?php echo $camping[0] ?>">Imágenes</a>
                                      <a class="btn btn-danger mb-2" href="crud-camping/delete.php?id=<?php echo $camping[0] ?>">Eliminar</a>
