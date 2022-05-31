@@ -9,3 +9,18 @@
         font-size: 24px;
     }
 }
+@media (max-width:768px) {
+    .clear-fix{
+        float: none;
+        clear: both;
+    }
+    .formulario{
+        margin-top: 200px;
+    }
+}
+
+@media (max-width:678px){
+    .formulario{
+        width: 100%;
+    }
+}

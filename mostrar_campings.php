@@ -34,7 +34,6 @@
             <h1 class="text-center text-white mt-3">Listado de campings registrados</h1>
             <table class="table table-hover w-75 m-auto bg-light">
                 <thead>
-                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Cantidad puestos</th>
                     <th>Dirección</th>
@@ -54,7 +53,7 @@
                         while($camping = $resultado->fetch_row()){
                              ?>
                              <tr>
-                                 <td><?php echo htmlspecialchars ($camping[0]) ?></td>
+                               
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[1])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[2])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[4])) ?></td>

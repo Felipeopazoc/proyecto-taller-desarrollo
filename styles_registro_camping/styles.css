@@ -10,14 +10,14 @@ textarea{
     height: 100px;
 }
 .formulario{
+    width: 100%;
+    margin: 0px auto;
     background-color: rgb(148, 181, 210);
     opacity: 0.9;
+    
 }
 h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 35px;
     
-}
-.li{
-    font-size: 23px;
 }

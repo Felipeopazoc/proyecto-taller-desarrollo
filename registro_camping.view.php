@@ -9,7 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles_registro_camping/styles.css">
     <link rel="stylesheet" href="styles_registro_camping/responsive.css">
-    <link href='https://unpkg.com/css.gg/icons/all.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <?php 
@@ -18,27 +19,22 @@
       ?>
    <div class="w-100 d-flex flex-column justify-content-center">
         <!--BARRA DE NAVEGACION-->
-        <nav class="navbar navbar-expand-lg navbar-light  text-white h-50">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white text-center" href="#"> <img src="img/camping.png" width="50px" alt=""> </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon "></span>
+        <header class="header">
+            <nav class="nav">
+                <a href="" class="logo nav-link">Geocamping</a>
+                <button class="nav-toggle" aria-label="">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
-                        <li class="nav-item text-center li">
-                              <a class="nav-link text-white " href="#">Registro de camping</a>
-                        </li>
-                        <li class="nav-item text-center li">
-                             <a class="nav-link text-white" href="mostrar_campings.php">Listado de campings</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Registrar Camping</a></li>
+                    <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-link">Listado camping</a></li>
+                  
+                </ul>
+            </nav>
+        </header>
         <!--FIN DE BARRA DE NAVEGACIÓN-->
         <h1 class="text-center text-white mt-3">Registro de camping</h1>
-        <form class="w-75 row m-auto text-black border mb-3 formulario rounded mt-2 p-3 was-validated" action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+        <form class=" row m-auto text-black border mb-3 formulario rounded mt-2 p-3 was-validated" action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
            
             <div class="col-lg-6 col-md-6 col-sm-6 mb-2 ">
                 <label class="form-label" for="name">Nombre camping: </label>
@@ -115,5 +111,6 @@
         </form>
 
    </div> 
+   <script src="./index.js"></script>
 </body>
 </html>
