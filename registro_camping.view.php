@@ -21,7 +21,7 @@
         <!--BARRA DE NAVEGACION-->
         <header class="header">
             <nav class="nav">
-                <a href="" class="logo nav-link">Geocamping</a>
+                <a href="index.php" class="logo nav-link">Geocamping</a>
                 <button class="nav-toggle" aria-label="">
                     <i class="fa-solid fa-bars"></i>
                 </button>

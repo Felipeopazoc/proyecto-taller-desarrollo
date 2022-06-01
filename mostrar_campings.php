@@ -16,12 +16,12 @@
         <div class="w-100 d-flex flex-column">
             <header class="header">
                 <nav class="nav">
-                    <a href="" class="logo nav-link">Geocamping</a>
+                    <a href="index.php" class="logo nav-link">Geocamping</a>
                     <button class="nav-toggle" aria-label="">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <ul class="nav-menu">
-                        <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Registrar Camping</a></li>
+                        <li class="nav-menu-item"><a href="index.php" class="nav-menu-link nav-link">Registrar Camping</a></li>
                         <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-link">Listado camping</a></li>
                     
                     </ul>
