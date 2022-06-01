@@ -38,29 +38,29 @@
            
             <div class="col-lg-6 col-md-6 col-sm-6 mb-2 ">
                 <label class="form-label " for="name">Nombre camping: </label>
-                <input class="form-control" id="name" placeholder="Camping ........" required type="text" name="nombre" id="nombre">
-                <div class="invalid-feedback">Por favor ingrese un nombre</div>
+                <input class="form-control" id="name"  pattern="[a-zA-Z ]{10,60}" placeholder="Camping ......" required type="text" name="nombre" id="nombre">
+                <div class="invalid-feedback">Por favor ingrese un nombre con un mínimo 10 carácteres.</div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-5 mb-2">
                 <label class="form-label" for="sitios">Cantidad de sitios: </label>
-                <input type="number" id="sitios" placeholder="Sitios disponibles" required class="form-control" name="cantidad_sitios">
-                <div class="invalid-feedback">Por favor ingrese cantidad</div>
+                <input type="number" id="sitios" max="40" placeholder="Sitios disponibles" required class="form-control" name="cantidad_sitios">
+                <div class="invalid-feedback">Por favor ingrese cantidad, máximo 40 sitios.</div>
             </div>
             <div class="col-lg-6 col-md-10 col-sm-11 mb-2">
                 <label class="form-label" for="direccion">Dirección: </label>
-                <input type="text" id="direccion" placeholder="Calle + Número" required class="form-control" name="direccion">
-                <div class="invalid-feedback">Por favor ingrese una dirección</div>
+                <input type="text" id="direccion" placeholder="Dirección + numero" pattern="[1-9]{2,100}" required class="form-control" name="direccion">
+                <div class="invalid-feedback">Por favor ingrese una dirección, mínimo 10 caráteres </div>
             </div>
             <div class="col-lg-4 col-md-5 col-sm-6 mb-2 ">
                 <label class="form-label" for="">Teléfono: </label>
                 <input type="number" placeholder="123456789 -> 9 dígitos" required class="form-control" name="telefono">
-                <div class="invalid-feedback">Por favor ingrese un numero de 9 dígitos</div>
+                <div class="invalid-feedback">Por favor ingrese un numero de 9 dígitos.</div>
             </div>
           
             <div class="col-lg-6 col-md-6 col-sm-5 mb-2">
                 <label class="form-label" for="">Correo: </label>
-                <input type="email" placeholder="Formato: xxxx@xxxxx" required class="form-control"  name="email">
-                <div class="invalid-feedback">Por favor ingrese un correo</div>
+                <input type="email" pattern="[^@ \t\r\n]+@gmail\.com" placeholder="Formato: xxxx@gmail.com" required class="form-control"  name="email">
+                <div class="invalid-feedback">Por favor ingrese un correo válido.</div>
             </div>
          
             <div class="col-lg-4 col-md-6 col-sm-6 mb-2">
@@ -68,7 +68,7 @@
                 <select name="select_region" id="" class="form-select">
                     <option value="">Región del bio bio</option>
                 </select>
-                <div style="color:green; font-size:15px; margin-left:3px; margin-top:3px;" class="w-100">Solo disponible la esta región de momento</div>
+                <div style="color:green; font-size:15px; margin-left:3px; margin-top:3px;" class="w-100">Solo disponible la esta región de momento.</div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 ">
                 <label class="form-label" for="">Comuna: </label>
@@ -91,17 +91,17 @@
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <label for="" class="form-label">Comienzo Temporada</label>
                 <input type="date" required name="inicio" min=<?php echo $hoy;?> class="form-control">
-                <div class="invalid-feedback">Por favor ingrese una fecha válida</div>
+                <div class="invalid-feedback">Por favor ingrese una fecha válida.</div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
                 <label for="" class="form-label">Fin Temporada</label>
                 <input type="date" required  class="form-control" min=<?php echo $hoy;?> name="fin">
-                <div class="invalid-feedback">Por favor ingrese una fecha válida</div>
+                <div class="invalid-feedback">Por favor ingrese una fecha válida.</div>
             </div>
             <div class="col-6-lg-6 mb-2 mt-2">
                 <label class="form-label" for="">Descripción: </label>
                 <textarea class="form-control" placeholder="Breve descripción de su servicio" name="descripcion" required ></textarea>
-                <div class="invalid-feedback">Por favor ingrese una descripción</div>
+                <div class="invalid-feedback">Por favor ingrese una descripción.</div>
             </div>
 
             <div class="col-lg-5 mt-2 row m-auto p-3">
