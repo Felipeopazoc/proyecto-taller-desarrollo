@@ -1,4 +1,4 @@
-@media(max-width:921px){
+@media(max-width:958px){
     .box{
         flex-direction: column;
         margin-bottom: 20px;
@@ -7,24 +7,47 @@
         margin-top: -10px;
     }
 }
+@media (max-width:768px){
+    .box{
+        width: 100%;
+    }
+}
+
 @media(max-width:729px){
     .box > button{
-        width: 35%;
+        width: 50%;
     }
 }
 @media(max-width:615px){
     .box{
         width: 100%;
     }
+    .h1{
+        font-size: 41px;
+    }
 }
+
+
+
 @media(max-width:459px){
     .box > h1{
-        font-size: 20px;
+        font-size: 35px;
     }
     .box > button{
-        width: 40%;
+        width: 45%;
     }
     .alerta{
         width: 75%;
+    }
+}
+@media(max-width:421px){
+    .box > button{
+        width: 55%;
+    }
+}
+
+@media(max-width:378px){
+    .box > h1{
+        font-size: 30px;
     }
 }

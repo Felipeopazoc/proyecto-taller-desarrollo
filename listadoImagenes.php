@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles_listadoimagenes/styles.css">
     <link rel="stylesheet" href="styles_listadoimagenes/responsive.css">
+    <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,28 +22,22 @@
     
     ?>
     <div class="w-100 d-flex flex-column">
-        <nav class="navbar navbar-expand-lg navbar-light text-white h-50">
-                    <div class="container-fluid">
-                        <a class="navbar-brand text-white" href="#"> <img src="img/camping.png" width="50px" alt=""> </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                              
-                                <li class="nav-item li text-center">
-                                    <a class="nav-link text-white " href="index.php">Registro de camping</a>
-                                </li>
-                                <li class="nav-item li text-center">
-                                    <a class="nav-link text-white" href="mostrar_campings.php">Listado de campings</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+         <header class="header">
+                <nav class="nav">
+                    <a href="" class="logo nav-link">Geocamping</a>
+                    <button class="nav-toggle" aria-label="">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu">
+                        <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Registrar Camping</a></li>
+                        <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-link">Listado camping</a></li>
+                    
+                    </ul>
                 </nav>
+            </header>
                 <div class="box ">
-                     <h1 class="text-center text-white">Listado de imagenes de camping registrado</h1>
-                     <button type="button" class=" m-auto mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>
+                     <h1 class=" text-white h1">Imágenes camping</h1>
+                     <button type="button" class="boton m-auto mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>
 
                 </div>    
 
@@ -82,7 +77,6 @@
             
         <table class=" w-75 m-auto table table-hover text-center bg-light">
             <thead>
-                <th>ID</th>
                 <th>Imagen</th>
                 <th>Acciones</th>
             </thead>
@@ -95,7 +89,6 @@
                         while($imagen = $resultados->fetch_assoc()){
                             ?>
                              <tr>
-                                 <td class="text-center"><?php echo $imagen["id_imagen"]; ?></td>
                                  <td class=""><?php echo '<img width=200px src="data:image/jpg;base64,'.base64_encode( $imagen['imagen'] ).'"/>';  ?></td>
                                  <td><a class="mt-4 btn btn-danger" href="crud-imagenes/delete.php?idImagen=<?php echo $imagen["id_imagen"]."&id_camping=$id"; ?>">Eliminar</a></td>
                             </tr>
@@ -111,5 +104,6 @@
         </table>
         
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

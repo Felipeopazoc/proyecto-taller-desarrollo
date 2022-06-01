@@ -21,3 +21,10 @@ h1{
     font-size: 35px;
     
 }
+
+@media (max-width:415px){
+    body{
+        height: 100vh;
+        background-image: url("../img/camping.png");
+    }
+}
