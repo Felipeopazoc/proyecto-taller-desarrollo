@@ -37,7 +37,7 @@
         <form class=" row m-auto text-black border mb-3 formulario rounded mt-2 p-3 was-validated" action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
            
             <div class="col-lg-6 col-md-6 col-sm-6 mb-2 ">
-                <label class="form-label" for="name">Nombre camping: </label>
+                <label class="form-label " for="name">Nombre camping: </label>
                 <input class="form-control" id="name" placeholder="Camping ........" required type="text" name="nombre" id="nombre">
                 <div class="invalid-feedback">Por favor ingrese un nombre</div>
             </div>

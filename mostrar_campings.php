@@ -28,7 +28,7 @@
                 </nav>
             </header>
             <h1 class="text-center text-white mt-3">Listado de campings registrados</h1>
-            <table class="table table-hover w-75 m-auto bg-light">
+            <table class="table table-responsive table-hover w-75 m-auto bg-light">
                 <thead>
                     <th>Nombre</th>
                     <th>Cantidad puestos</th>
