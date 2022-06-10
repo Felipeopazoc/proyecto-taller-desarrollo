@@ -1,35 +1,45 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de campings</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Document</title>
     <link rel="stylesheet" href="styles_mostrar_camping/styles.css">
-    <link rel="stylesheet" href="styles_mostrar_camping/responsive.css">
     <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </head>
 <body>
-        <?php include_once("conexion_bd/conexion.php"); ?>
-        <div class="w-100 d-flex flex-column">
-            <header class="header">
+<?php 
+      $hoy=date("Y-m-d");
+       include("conexion_bd/conexion.php");
+      ?>
+    <div class="main-container">
+        <header class="header">
+            <div class="logo">
+                <h3>Geocamping</h3>
+            </div>
+            <div class="login">
+                <h3><i class="fa-solid fa-user"></i></h3>
+            </div>
+        </header>
+        <!--Comienza el contenedor-->        
+        <div class="content">
+            <div class="barra-navegacion">
                 <nav class="nav">
-                    <a href="index.php" class="logo nav-link">Geocamping</a>
-                    <button class="nav-toggle" aria-label="">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                    <ul class="nav-menu">
-                        <li class="nav-menu-item"><a href="index.php" class="nav-menu-link nav-link">Registrar Camping</a></li>
-                        <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-link">Listado camping</a></li>
-                    
+                    <ul class="ul">
+                        <li><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                        <li><a href="#"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
+                        <li><a href="#"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                        <li><a href="#"><i class="fa-solid fa-box"></i> Imágenes</a></li>
                     </ul>
                 </nav>
-            </header>
-            <h1 class="text-center text-white mt-3">Listado de campings registrados</h1>
-            <table class="table table-responsive table-hover w-75 m-auto bg-light">
-                <thead>
+            </div>
+            <div class="panel-admin">
+            <h1>Listado de campings registrados</h1>
+            <table class="table table-responsive table-striped w-100 bg-light">
+                <thead class="thead-dark">
                     <th>Nombre</th>
                     <th>Cantidad puestos</th>
                     <th>Dirección</th>
@@ -52,14 +62,14 @@
                                
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[1])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[2])) ?></td>
-                                 <td><?php echo htmlspecialchars (strip_tags ($camping[4])) ?></td>
-                                 <td><?php echo htmlspecialchars (strip_tags ($camping[5])) ?></td>
+                                 <td><i class="fa-solid fa-location-dot"></i> <?php echo htmlspecialchars (strip_tags ($camping[4])) ?></td>
+                                 <td><i class="fa-solid fa-envelope"></i> <?php echo htmlspecialchars (strip_tags ($camping[5])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[6])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[12]))?></td>
-                                 <td><?php echo htmlspecialchars (strip_tags ($camping[15]))?></td>
+                                 <td><i class="fa-solid fa-check"></i></td>
                                  <td>
-                                     <a class="btn btn-primary mb-2" href="listadoImagenes.php?id=<?php echo $camping[0] ?>">Imágenes</a>
-                                     <a class="btn btn-danger mb-2" href="crud-camping/delete.php?id=<?php echo $camping[0] ?>">Eliminar</a>
+                                     <a class="btn btn-primary mb-2" href="listadoImagenes.php?id=<?php echo $camping[0] ?>"><i class="fa-solid fa-image"></i></a>
+                                     <a class="btn btn-danger mb-2" href="crud-camping/delete.php?id=<?php echo $camping[0] ?>"><i class="fa-solid fa-trash-can"></i></a>
                                 </td>
                              </tr>
                             <?php
@@ -75,8 +85,10 @@
                 </tbody>
              
             </table>
-
+            </div>
         </div>
-        <script src="index.js"></script>
+        <!--Fin contenedor-->
+
+    </div>
 </body>
 </html>
