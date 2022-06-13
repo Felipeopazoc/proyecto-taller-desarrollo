@@ -1,168 +1,162 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de camping </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<?php
-include("registro_camping.view.php");
-include("conexion_bd/conexion.php");
 
-if(isset($_POST["submit"])){
+</head>
+<body>
+<?php 
+      $hoy=date("Y-m-d");
+       include("conexion_bd/conexion.php");
+       $errores = "";
+      ?>
+    <div class="main-container">
+        <header class="header">
+            <div class="logo">
+                <h3>Geocamping</h3>
+            </div>
+            <div class="login">
+                <h3><i class="fa-solid fa-user"></i></h3>
+            </div>
+        </header>
+        <!--Comienza el contenedor-->        
+        <div class="content">
+            <div class="barra-navegacion">
+                <nav class="nav">
+                    <ul class="ul">
+                        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="#"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
+                        <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="panel-admin">
+                <h2 class="h1">Formulario de registro</h2>
+                
 
-    $nombre = $_POST["nombre"];
-    $cantidad = $_POST["cantidad_sitios"];
-    $correo = $_POST["email"];
-    $descripcion = $_POST["descripcion"];
-    $direccion = $_POST["direccion"];
-    $telefono = $_POST["telefono"];
-    $fecha_inicio = $_POST["inicio"];
-    $fecha_fin = $_POST["fin"];
-    $id_random = rand(1,100000);
-    $comuna = $_POST["select_comuna"];
-    //Sanitizamos las variables
-    $nombre = trim($nombre);
-    $correo = trim($correo);
-    $descripcion = trim($descripcion);
-    //Eliminamos la posible inyeccion html
-    $nombre = htmlspecialchars(strip_tags($nombre));
-    $correo = htmlspecialchars(strip_tags($correo));
-    $cantidad = htmlspecialchars(strip_tags($cantidad));
-    $descripcion = htmlspecialchars(strip_tags($descripcion));
-    $telefono = htmlspecialchars(strip_tags($telefono));
-    $direccion = htmlspecialchars(strip_tags($direccion));
+                <form class="formulario was-validated row" id="form" method="POST">
+
+                    <div class="col-lg-7 col-md-6 col-sm-6">
+                        <label class="form-label" for="name"> <i class="fa-solid fa-campfire"></i> Nombre camping: </label>
+                        <input type="text" name="nombre" autocomplete="off" class="form-control efecto" id="name" placeholder="Camping ......" required  >
+                        <div class="invalid-feedback" id="mensaje"></div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-5">
+                        <label class="form-label" for="sitios">Cantidad de sitios: </label>
+                        <input type="number" id="sitios" max="40" " placeholder="Sitios disponibles" required class="form-control" name="cantidad_sitios">
+                        <div class="invalid-feedback">Por favor ingrese cantidad, máximo 40 sitios.</div>
+                     </div>
+                     <div class="col-lg-7 col-md-8 col-sm-11">
+                         <label class="form-label" for="direccion">Dirección: </label>
+                         <input type="text" id="direccion" placeholder="Dirección + numero"  required class="form-control" name="direccion">
+                          <div class="invalid-feedback" id="mensaje2"></div>
+                     </div>
+                     <div class="col-lg-4 col-md-5 col-sm-6 mb-2 ">
+                        <label class="form-label" for="">Teléfono: </label>
+                        <input type="number" placeholder="123456789 -> 9 dígitos" required class="form-control" id="telefono" name="telefono">
+                        <div class="invalid-feedback" id="mensaje3"></div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-5 mb-2">
+                        <label class="form-label" for="">Correo: </label>
+                        <input type="email" id="email" placeholder="Formato: xxxx@gmail.com" required class="form-control"  name="email">
+                        <div class="invalid-feedback">Por favor ingrese un correo válido.</div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-sm-6 mb-2">
+                        <label class="form-label" for="">Region: </label>
+                        <select name="select_region" id="" class="form-select">
+                            <option value="">Región del bio bio</option>
+                        </select>
+                        <div style="color:green; font-size:15px; margin-left:3px; margin-top:3px;" class="w-100">Solo disponible esta región de momento.</div>
+                    </div>
+                    
+                    <div class="col-lg-7 col-md-6 col-sm-6 ">
+                        <label class="form-label" for="">Comuna: </label>
+                        <select required name="select_comuna" id="" class="form-select">
+                            <option value="">Seleccione una comuna: </option>
+                            <?php
+                                $sql = "select * from ciudad order by nombre";
+                                $resultado = mysqli_query($conn,$sql);
+                                $filas = mysqli_num_rows($resultado);
+                                if($filas){
+                                    while($ciudad = $resultado->fetch_row()){
+                                        ?>
+                                            <option value="<?php echo $ciudad[0]?>"><?php echo $ciudad[1] ?></option>
+                                        <?php
+                                    }
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <label for="" class="form-label">Mes comienzo Temporada</label>
+                        <select required class="form-select" name="" id="">
+                            <option value="">Seleccione un mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor seleccione un mes.</div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-6 mt-2">
+                        <label for="" class="form-label">Mes fin Temporada</label>
+                        <select required class="form-select" name="" id="">
+                            <option value="">Seleccione un mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor seleccione un mes.</div>
+                    </div>
+                    <div class="col-lg-6 mb-2 mt-2">
+                        <label class="form-label" for="">Descripción: </label>
+                        <textarea class="form-control" placeholder="Breve descripción de su servicio" name="descripcion" required ></textarea>
+                        <div class="invalid-feedback">Por favor ingrese una descripción.</div>
+                    </div>
+                    <div class="col-lg-5 mt-2 row m-auto p-3">
+                        <button class="m-auto btn btn-primary" name="submit" id="button" type="submit">Enviar información</button>
+                    </div>  
+
+                </form>
+            </div>
+        </div>
+        <!--Fin contenedor-->
+
+    </div>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/validacion_nombre.js"></script>
+    <script src="./js/validar-direccion.js"></script>
+    <script src="./js/validar_telefono.js"></script>
+    <script src="./js/validar-correo.js"></script>
     
-    $contador_validacion = 0;
-
-  //  validarNombre($nombre);
-  //  validarCorreo($correo);
-  //  validarDireccion($direccion);
-  //validarTelefono($telefono);
-     if(!validarNombre($nombre)){
-         $contador_validacion++;
-     }
-     if(!validarCorreo($correo)){
-         $contador_validacion++;
-     }
-     if(!validarDireccion($direccion)){
-         $contador_validacion++;
-     }
-     if(validarTelefono($telefono)){
-        $contador_validacion++;
-     }
-     if(validarFechas($fecha_inicio,$fecha_fin)){
-         $contador_validacion++;
-     }
-
-
-    
-     if($contador_validacion==5){
-         ?>
-            <p class="alert alert-success w-75 m-auto text-center">Camping registrado correctamente, redireccionando.....</p>
-         <?php
-             $sql = "insert into camping values($id_random,'$nombre',$cantidad,'$descripcion','$direccion','$correo',$telefono,'$fecha_inicio','$fecha_fin',$comuna,1)";
-             $conn ->query($sql);
-             echo"<script language='javascript'>window.location='listadoImagenes.php?id=$id_random'</script>;";
-            
-        }else{
-         ?>
-            <p class="alert alert-danger w-50 mb-2 m-auto text-center"> <strong>Ingrese de nuevo la información </strong></p>
-        <?php
-     }
-  
-    
-    //header("Location: ../listado_campings/agregarImagenes.php?id=$id_random"); //Opcion 1
- 
-    
-}
-
-function validarNombre($nombre){
-    $nombre = strtoupper($nombre);
-    include("conexion_bd/conexion.php");
-    $existe = false;
-    $sql = "select * from camping";
-    $resultado = mysqli_query($conn,$sql);
-    $filas = mysqli_num_rows($resultado);
-    if($filas){
-        while($nombre_camping = $resultado->fetch_row()){
-            if(strcmp($nombre,strtoupper($nombre_camping[1]))==0){
-                 $existe = true;
-                 echo "<script>
-                 Swal.fire({
-                   icon: 'error',
-                   title: 'Oops...!',
-                   text: 'Operación inválida, el nombre ya está registrado.',  
-                   })
-                  window.location= 'index.php'
-                  </script>"; 
-                 break;
-            }
-        }
-    }
-    return $existe;
-}
-
-function validarCorreo($correo){
-    $correo = strtoupper($correo);
-    include("conexion_bd/conexion.php");
-    $existe = false;
-    $sql = "select * from camping";
-    $resultado = mysqli_query($conn,$sql);
-    $filas = mysqli_num_rows($resultado);
-    if($filas){
-        while($correo_camping = $resultado->fetch_row()){
-            if(strcmp($correo,strtoupper($correo_camping[5]))==0){
-                 $existe = true;
-                 ?>
-                 <p class="alert alert-danger w-50 mb-2 m-auto text-center">Este <strong>correo</strong> ya está registrado</p>
-                <?php
-                 break;
-            }
-        }
-    }
-    return $existe;
-}
-function validarDireccion($direccion){
-    $direccion = strtoupper($direccion);
-    include("conexion_bd/conexion.php");
-    $existe = false;
-    $sql = "select * from camping";
-    $resultado = mysqli_query($conn,$sql);
-    $filas = mysqli_num_rows($resultado);
-    if($filas){
-        while($direccion_camping = $resultado->fetch_row()){
-            if(strcmp($direccion,strtoupper($direccion_camping[4]))==0){
-                $existe = true;
-                ?>
-                <p class="alert alert-danger w-50 mb-2 m-auto text-center">Esta <strong> dirección </strong> ya está registrada</p>
-                <?php
-                break;
-            }
-        }
-    }
-    return $existe;
-}
-function validarTelefono($telefono){
- 
-     $largo = strlen($telefono);
-     if($largo==9){
-        return true;
-     }else{
-        ?>
-        <p class="alert alert-danger w-50 mb-2 m-auto text-center">Este <strong> teléfono </strong> debe tener 9 dígitos</p>
-        <?php
-        return false;
-     }
-}
-function validarFechas($inicio,$final){
-     if($final > $inicio){
-        return true;
-     }else{
-         ?>
-            <p class="alert alert-danger w-50 mb-2 m-auto text-center">La <strong>fecha de inicio </strong> no debe ser mayor que la <strong>fecha de término </strong> de temporada</p>
-         <?php
-         return false;
-     }
-}
-
-?>
-
-
+</body>
+</html>

@@ -29,10 +29,9 @@
             <div class="barra-navegacion">
                 <nav class="nav">
                     <ul class="ul">
-                        <li><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                        <li><a href="#"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
+                        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="index.php"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
                         <li><a href="#"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
-                        <li><a href="#"><i class="fa-solid fa-box"></i> Imágenes</a></li>
                     </ul>
                 </nav>
             </div>
@@ -59,7 +58,6 @@
                         while($camping = $resultado->fetch_row()){
                              ?>
                              <tr>
-                               
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[1])) ?></td>
                                  <td><?php echo htmlspecialchars (strip_tags ($camping[2])) ?></td>
                                  <td><i class="fa-solid fa-location-dot"></i> <?php echo htmlspecialchars (strip_tags ($camping[4])) ?></td>

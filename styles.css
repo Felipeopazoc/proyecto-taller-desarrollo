@@ -101,3 +101,14 @@
     margin: 0px auto;
     padding: 10px ;
 }
+.alerta-error{
+    color: red;
+    margin-top: 5px;
+}
+.alerta-disponible{
+    margin-top: 5px;
+    color: rgb(61, 152, 61);
+}
+.efecto:focus{
+    border-color: blue;
+}

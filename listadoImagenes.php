@@ -1,54 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagenes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Imágenes</title>
     <link rel="stylesheet" href="styles_listadoimagenes/styles.css">
-    <link rel="stylesheet" href="styles_listadoimagenes/responsive.css">
     <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
-    <?php
-    include("conexion_bd/conexion.php");
-    $id = "";
-    if(isset($_GET["id"])){
-        $id = $_GET["id"];
-    }
-    
-    ?>
-    <div class="w-100 d-flex flex-column">
-         <header class="header">
+<?php 
+      $hoy=date("Y-m-d");
+       include("conexion_bd/conexion.php");
+       $id = "";
+       if($_GET["id"]){
+          $id = $_GET["id"];
+       }
+      ?>
+    <div class="main-container">
+        <header class="header">
+            <div class="logo">
+                <h3>Geocamping</h3>
+            </div>
+            <div class="login">
+                <h3><i class="fa-solid fa-user"></i></h3>
+            </div>
+        </header>
+        <!--Comienza el contenedor-->        
+        <div class="content">
+            <div class="barra-navegacion">
                 <nav class="nav">
-                    <a href="index.php" class="logo nav-link">Geocamping</a>
-                    <button class="nav-toggle" aria-label="">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                    <ul class="nav-menu">
-                        <li class="nav-menu-item"><a href="index.php" class="nav-menu-link nav-link">Registrar Camping</a></li>
-                        <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-link">Listado camping</a></li>
-                    
+                    <ul class="ul">
+                        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="index.php"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
+                        <li><a href="#"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
                     </ul>
                 </nav>
-            </header>
-                <div class="box ">
-                     <h1 class=" text-white h1">Imágenes camping</h1>
-                     <button type="button" class="boton m-auto mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>
-
-                </div>    
-
-                    <!-- The Modal -->
-                    <div class="modal" id="myModal">
+            </div>
+            
+            <div class="panel-admin">
+                <div class="box">
+                    <h1>Listado de imágenes de camping seleccionado</h1>
+                    <button type="button" class=" btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>   
+                </div>
+                 
+                <!--Inicio de modal-->
+                <div class="modal w-100" id="myModal">
                     <div class="modal-dialog">
                         <div class="modal-content">
 
                         <!-- Modal Header -->
                         <div class="modal-header">
-                            <h4 class="modal-title text-center">Ingresar imagen</h4>
+                            <h4 class="modal-title text-center">Subir Imagen</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
@@ -61,7 +67,7 @@
                                     <input type="file" required name="imagen" class="form-control">
                                  </div>
                                  <div class="w-100 d-flex mb-2">
-                                      <button name="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
+                                      <button name="submit" id="boton" type="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
                                  </div>
                             </form>
                         </div>
@@ -73,37 +79,60 @@
 
                         </div>
                     </div>
-                    </div>
-            
-        <table class=" w-75 m-auto table table-hover text-center bg-light">
-            <thead>
-                <th>Imagen</th>
-                <th>Acciones</th>
-            </thead>
-            <tbody>
-                <?php
-                    $sql = "select * from imagenes where id_camping=$id";
-                    $resultados= mysqli_query($conn,$sql);
-                    $filas = mysqli_num_rows($resultados);
-                    if($filas){
-                        while($imagen = $resultados->fetch_assoc()){
-                            ?>
-                             <tr>
-                                 <td class=""><?php echo '<img width=200px src="data:image/jpg;base64,'.base64_encode( $imagen['imagen'] ).'"/>';  ?></td>
-                                 <td><a class="mt-4 btn btn-danger" href="crud-imagenes/delete.php?idImagen=<?php echo $imagen["id_imagen"]."&id_camping=$id"; ?>">Eliminar</a></td>
-                            </tr>
-                            <?php
-                        }
-                    }else{
-                        ?>
-                            <p class="col-sm-10 m-auto mt-2 mb-3 text-center alert alert-danger">El camping no tiene imágenes</p>
+                </div>
+
+                <!--Fin del modal-->
+
+                <table class="w-100 mt-2 ml-2 table table-responsive table-striped">
+                    <thead>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </thead>
+                    <tbody>
                         <?php
-                    }
-                ?>
-            </tbody>
-        </table>
-        
+                            $sql = "select * from imagenes where id_camping = $id";
+                            $resultado = mysqli_query($conn,$sql);
+
+                            $filas = mysqli_num_rows($resultado);
+
+                            if($filas){
+                                while($imagen = $resultado->fetch_assoc()){
+                                    ?>
+                                     <tr>
+                                         <td class=""><?php echo '<img width=200px height=200px src="data:image/jpg;base64,'.base64_encode( $imagen['imagen'] ).'"/>';  ?></td>
+                                         <td><a class="mt-4 btn btn-danger" href="crud-imagenes/delete.php?idImagen=<?php echo $imagen["id_imagen"]."&id_camping=$id"; ?>"><i class="fa-solid fa-trash-can"></i></a></td>
+                                    </tr>
+                                    <?php
+                                }
+
+                            }else{
+                                ?>
+                                    <p class="alert alert-danger w-50 text-center mt-2">No hay imágenes registradas para este camping</p>
+                                <?php
+
+                            }
+                            
+                        
+                        ?>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!--Fin contenedor-->
+
     </div>
-    <script src="index.js"></script>
+    <script >
+        let boton = document.getElementById("boton");
+        boton.addEventListener("click",(e)=>{
+           
+            swal({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success",
+            button: "Aww yiss!",
+            });
+        });
+    </script>
 </body>
 </html>
