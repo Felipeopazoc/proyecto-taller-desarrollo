@@ -36,7 +36,7 @@
                     <ul class="ul">
                         <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a href="index.php"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
-                        <li><a href="#"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                        <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
                     </ul>
                 </nav>
             </div>

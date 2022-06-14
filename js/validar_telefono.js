@@ -6,11 +6,12 @@ $(document).ready(function(){
         console.log(valor.length);
        
         if(valor.length==9){
-            $("#mensaje3").show();
+         
             $("#mensaje3").text("Cumple con el formato");
             $("#button").attr("disabled",true);
-            $("#mensaje").removeClass("alerta-disponible");
-            $("#mensaje").addClass("alerta-error");
+            $("#mensaje3").removeClass("invalid-feeback");
+            $("#mensaje3").addClass("alerta-disponible");
+            $("#mensaje3").show();
         }else{
             $("#mensaje3").show();
             n--;
@@ -18,8 +19,8 @@ $(document).ready(function(){
                 $("#mensaje3").text("Te faltan "+(n)+" números");
             }
         
-            $("#mensaje").removeClass("invalid-feedback");
-            $("#mensaje").addClass("alerta-disponible");
+            $("#mensaje3").removeClass("invalid-feedback");
+            $("#mensaje3").addClass("alerta-error");
             
             $("#button").attr("disabled",false);
         }

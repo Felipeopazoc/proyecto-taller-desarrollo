@@ -10,8 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+   
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 </head>
 <body>
@@ -48,19 +49,19 @@
 
                     <div class="col-lg-7 col-md-6 col-sm-6">
                         <label class="form-label" for="name"> <i class="fa-solid fa-campfire"></i> Nombre camping: </label>
-                        <input type="text" name="nombre" autocomplete="off" class="form-control efecto" id="name" placeholder="Camping ......" required  >
+                        <input type="text" required name="nombre" autocomplete="off" class="form-control efecto" id="name" placeholder="Camping ......"   >
                         <div class="invalid-feedback" id="mensaje"></div>
                     </div>
 
 
                     <div class="col-lg-4 col-md-4 col-sm-5">
                         <label class="form-label" for="sitios">Cantidad de sitios: </label>
-                        <input type="number" id="sitios" max="40" " placeholder="Sitios disponibles" required class="form-control" name="cantidad_sitios">
+                        <input type="number" required id="sitios" max="40" " placeholder="Sitios disponibles"  class="form-control" name="cantidad_sitios">
                         <div class="invalid-feedback">Por favor ingrese cantidad, máximo 40 sitios.</div>
                      </div>
                      <div class="col-lg-7 col-md-8 col-sm-11">
                          <label class="form-label" for="direccion">Dirección: </label>
-                         <input type="text" id="direccion" placeholder="Dirección + numero"  required class="form-control" name="direccion">
+                         <input type="text" id="direccion" required placeholder="Dirección + numero" class="form-control" name="direccion">
                           <div class="invalid-feedback" id="mensaje2"></div>
                      </div>
                      <div class="col-lg-4 col-md-5 col-sm-6 mb-2 ">
@@ -70,20 +71,25 @@
                     </div>
                     <div class="col-lg-7 col-md-6 col-sm-5 mb-2">
                         <label class="form-label" for="">Correo: </label>
-                        <input type="email" id="email" placeholder="Formato: xxxx@gmail.com" required class="form-control"  name="email">
-                        <div class="invalid-feedback">Por favor ingrese un correo válido.</div>
+                        <input type="email" id="email" pattern="[^@ \t\r\n]+@gmail.com" placeholder="Formato: xxxx@gmail.com" required class="form-control"  name="email">
+                        <div class="invalid-feedback" id="mensaje4"></div>
                      </div>
                      <div class="col-lg-4 col-md-6 col-sm-6 mb-2">
                         <label class="form-label" for="">Region: </label>
-                        <select name="select_region" id="" class="form-select">
-                            <option value="">Región del bio bio</option>
+                        <select required name="select_region" id="" class="form-select">
+                            <option value="">Seleccione una región</option>
+                            <option value="1">Región del bio bio</option>
                         </select>
                         <div style="color:green; font-size:15px; margin-left:3px; margin-top:3px;" class="w-100">Solo disponible esta región de momento.</div>
                     </div>
-                    
-                    <div class="col-lg-7 col-md-6 col-sm-6 ">
+                    <div class="col-lg-7 mb-2 ">
+                        <label class="form-label" for="">Descripción: </label>
+                        <textarea class="form-control" id="descripcion" placeholder="Breve descripción de su servicio" name="descripcion" required ></textarea>
+                        <div class="invalid-feedback">Por favor ingrese una descripción.</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 ">
                         <label class="form-label" for="">Comuna: </label>
-                        <select required name="select_comuna" id="" class="form-select">
+                        <select required name="select_comuna" id="comuna" class="form-select">
                             <option value="">Seleccione una comuna: </option>
                             <?php
                                 $sql = "select * from ciudad order by nombre";
@@ -99,49 +105,50 @@
                             ?>
                         </select>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                  
+                    <div class="col-lg-7 col-md-6 col-sm-6">
                         <label for="" class="form-label">Mes comienzo Temporada</label>
-                        <select required class="form-select" name="" id="">
+                        <select required class="form-select" name="inicio" id="inicio">
                             <option value="">Seleccione un mes</option>
-                            <option value="1">Enero</option>
-                            <option value="2">Febrero</option>
-                            <option value="3">Marzo</option>
-                            <option value="4">Abril</option>
-                            <option value="5">Mayo</option>
-                            <option value="6">Junio</option>
-                            <option value="7">Julio</option>
-                            <option value="8">Agosto</option>
-                            <option value="9">Septiembre</option>
-                            <option value="10">Octubre</option>
-                            <option value="11">Noviembre</option>
-                            <option value="12">Diciembre</option>
+                            <?php 
+                                $sql2 = "select * from mes";
+                                $resultado2 = mysqli_query($conn,$sql2);
+                                $filas2 = mysqli_num_rows($resultado2);
+
+                                if($filas2){
+                                    while($mes = $resultado2->fetch_row()){
+                                        ?>
+                                        <option value="<?php echo $mes[0]?>"><?php echo $mes[1] ?></option>
+                                        <?php
+                                    }
+                                }
+                            ?>
                         </select>
                         <div class="invalid-feedback">Por favor seleccione un mes.</div>
+                        <div id="mensaje5"></div>
                     </div>
-                    <div class="col-lg-5 col-md-6 col-sm-6 mt-2">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <label for="" class="form-label">Mes fin Temporada</label>
-                        <select required class="form-select" name="" id="">
+                        <select required class="form-select" name="fin" id="fin">
                             <option value="">Seleccione un mes</option>
-                            <option value="1">Enero</option>
-                            <option value="2">Febrero</option>
-                            <option value="3">Marzo</option>
-                            <option value="4">Abril</option>
-                            <option value="5">Mayo</option>
-                            <option value="6">Junio</option>
-                            <option value="7">Julio</option>
-                            <option value="8">Agosto</option>
-                            <option value="9">Septiembre</option>
-                            <option value="10">Octubre</option>
-                            <option value="11">Noviembre</option>
-                            <option value="12">Diciembre</option>
+                            <?php 
+                                $sql3 = "select * from mes";
+                                $resultado3 = mysqli_query($conn,$sql2);
+                                $filas3 = mysqli_num_rows($resultado2);
+
+                                if($filas3){
+                                    while($mes = $resultado3->fetch_row()){
+                                        ?>
+                                        <option value="<?php echo $mes[0]?>"><?php echo $mes[1] ?></option>
+                                        <?php
+                                    }
+                                }
+                            ?>
                         </select>
                         <div class="invalid-feedback">Por favor seleccione un mes.</div>
+                        <div id="mensaje6" ></div>
                     </div>
-                    <div class="col-lg-6 mb-2 mt-2">
-                        <label class="form-label" for="">Descripción: </label>
-                        <textarea class="form-control" placeholder="Breve descripción de su servicio" name="descripcion" required ></textarea>
-                        <div class="invalid-feedback">Por favor ingrese una descripción.</div>
-                    </div>
+                   
                     <div class="col-lg-5 mt-2 row m-auto p-3">
                         <button class="m-auto btn btn-primary" name="submit" id="button" type="submit">Enviar información</button>
                     </div>  
@@ -157,6 +164,8 @@
     <script src="./js/validar-direccion.js"></script>
     <script src="./js/validar_telefono.js"></script>
     <script src="./js/validar-correo.js"></script>
+    <script src="./js/validar-temporada.js"></script>
+    <script src="./js/enviardatos.js"></script>
     
 </body>
 </html>

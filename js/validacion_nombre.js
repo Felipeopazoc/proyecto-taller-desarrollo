@@ -14,7 +14,7 @@ $(document).ready(function(){
                 if(response.length>6){
                  
                     let data = JSON.parse(response);
-                    if(data.nombre == e.target.value){
+                    if(data.nombre == e.target.value && e.target.value!=""){
                         $("#mensaje").show();
                         $("#mensaje").text("Este nombre ya está registrado");
                         //Bloqueamos los demas inputs

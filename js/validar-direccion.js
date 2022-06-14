@@ -12,7 +12,7 @@ $(document).ready(function(){
                     let data = JSON.parse(response);
                     
                     if(data.direccion == e.target.value){
-                        $("#mensaj2").show();
+                        $("#mensaje2").show();
                         $("#mensaje2").text("Esta dirección ya está registrada");
                         //Bloqueamos los demas inputs
                         $("#button").attr("disabled",true);
