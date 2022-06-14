@@ -8,7 +8,7 @@ if(!empty($_POST)){
     $correo = htmlspecialchars($correo);
     $correo = strip_tags($correo);
 
-    $query = "SELECT * FROM CAMPING WHERE CORREO = '$correo'";
+    $query = "select * from camping where correo = '$correo'";
 
     $resultado = mysqli_query($conn,$query);
     

@@ -7,7 +7,7 @@
         //Sanitizamos el string del nombre
         $direccion = trim($direccion);
         $direccion = htmlspecialchars(strip_tags($direccion));
-        $query = "SELECT * FROM CAMPING WHERE DIRECCION = '$direccion'";
+        $query = "select * from camping where direccion = '$direccion'";
 
         $resultado = mysqli_query($conn,$query);
     

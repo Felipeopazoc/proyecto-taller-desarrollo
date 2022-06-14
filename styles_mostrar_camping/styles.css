@@ -51,10 +51,9 @@
 }
 .barra-navegacion{
     width: 15%;
-    height: auto;
     display: flex;
     background-color: #7d8490;
-    min-height: 560px;
+    min-height: 625px;
     
 }
 .panel-admin{

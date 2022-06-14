@@ -51,7 +51,7 @@
 }
 .barra-navegacion{
     width: 20%;
-    min-height: 550;
+    min-height: 550px;
     display: flex;
     background-color: #7d8490;
 

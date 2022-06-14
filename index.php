@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de camping </title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_registro_camping/responsive.css">
     <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -54,12 +55,12 @@
                     </div>
 
 
-                    <div class="col-lg-4 col-md-4 col-sm-5">
+                    <div class="col-lg-4 col-md-5 col-sm-5">
                         <label class="form-label" for="sitios">Cantidad de sitios: </label>
                         <input type="number" required id="sitios" max="40" " placeholder="Sitios disponibles"  class="form-control" name="cantidad_sitios">
                         <div class="invalid-feedback">Por favor ingrese cantidad, máximo 40 sitios.</div>
                      </div>
-                     <div class="col-lg-7 col-md-8 col-sm-11">
+                     <div class="col-lg-7 col-md-6 col-sm-11">
                          <label class="form-label" for="direccion">Dirección: </label>
                          <input type="text" id="direccion" required placeholder="Dirección + numero" class="form-control" name="direccion">
                           <div class="invalid-feedback" id="mensaje2"></div>
@@ -74,7 +75,7 @@
                         <input type="email" id="email" pattern="[^@ \t\r\n]+@gmail.com" placeholder="Formato: xxxx@gmail.com" required class="form-control"  name="email">
                         <div class="invalid-feedback" id="mensaje4"></div>
                      </div>
-                     <div class="col-lg-4 col-md-6 col-sm-6 mb-2">
+                     <div class="col-lg-4 col-md-5 col-sm-6 mb-md-2 mb-2">
                         <label class="form-label" for="">Region: </label>
                         <select required name="select_region" id="" class="form-select">
                             <option value="">Seleccione una región</option>
@@ -87,7 +88,7 @@
                         <textarea class="form-control" id="descripcion" placeholder="Breve descripción de su servicio" name="descripcion" required ></textarea>
                         <div class="invalid-feedback">Por favor ingrese una descripción.</div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 ">
+                    <div class="col-lg-4 col-md-12 mb-md-2 col-sm-6 ">
                         <label class="form-label" for="">Comuna: </label>
                         <select required name="select_comuna" id="comuna" class="form-select">
                             <option value="">Seleccione una comuna: </option>

@@ -1,3 +1,5 @@
+/*
+
 @media (max-width:425px) {
     h1{
         font-size: 24px;
@@ -22,5 +24,26 @@
 @media (max-width:678px){
     .formulario{
         width: 100%;
+    }
+}
+
+*/
+
+@media (max-width:426px) {
+    .content{
+        flex-direction: column;
+    }
+    .barra-navegacion{
+        width: 100%;
+    }
+    .panel-admin{
+        width: 100%;
+    }
+    .ul{
+        justify-content: center;
+        align-items: center;
+    }
+    .ul > li > a{
+        text-align: center;
     }
 }

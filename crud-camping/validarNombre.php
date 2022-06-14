@@ -6,7 +6,7 @@
         //Sanitizamos el string del nombre
         $nombre = trim($nombre);
         $nombre = htmlspecialchars(strip_tags($nombre));
-        $query = "SELECT * FROM CAMPING WHERE NOMBRE = '$nombre'";
+        $query = "select * from camping where nombre = '$nombre'";
 
         $resultado = mysqli_query($conn,$query);
     
