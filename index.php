@@ -50,7 +50,7 @@
 
                     <div class="col-lg-7 col-md-6 col-sm-6">
                         <label class="form-label" for="name"> <i class="fa-solid fa-campfire"></i> Nombre camping: </label>
-                        <input type="text" required name="nombre" autocomplete="off" class="form-control efecto" id="name" placeholder="Camping ......"   >
+                        <input type="text" required name="nombre"  pattern="[a-zA-Z ]{8,100}" autocomplete="off" class="form-control efecto" id="name" placeholder="Mínimo 8 carácteres y sin números"   >
                         <div class="invalid-feedback" id="mensaje"></div>
                     </div>
 
@@ -67,7 +67,7 @@
                      </div>
                      <div class="col-lg-4 col-md-5 col-sm-6 mb-2 ">
                         <label class="form-label" for="">Teléfono: </label>
-                        <input type="number" placeholder="123456789 -> 9 dígitos" required class="form-control" id="telefono" name="telefono">
+                        <input type="text" maxlength="9" placeholder="123456789 -> 9 dígitos" required class="form-control" id="telefono" name="telefono">
                         <div class="invalid-feedback" id="mensaje3"></div>
                     </div>
                     <div class="col-lg-7 col-md-6 col-sm-5 mb-2">
@@ -85,7 +85,7 @@
                     </div>
                     <div class="col-lg-7 mb-2 ">
                         <label class="form-label" for="">Descripción: </label>
-                        <textarea class="form-control" id="descripcion" placeholder="Breve descripción de su servicio" name="descripcion" required ></textarea>
+                        <textarea maxlength="20" class="form-control" id="descripcion" placeholder="Breve descripción de su servicio" name="descripcion" required ></textarea>
                         <div class="invalid-feedback">Por favor ingrese una descripción.</div>
                     </div>
                     <div class="col-lg-4 col-md-12 mb-md-2 col-sm-6 ">

@@ -35,7 +35,7 @@ $(document).ready(function(){
         let finTemporada = $("#fin").val();
         let descripcion = $("#descripcion").val();
 
-        if(nombre.length>0 && sitios.length>0 && direccion.length>0 && telefono>0 && correo.length>0 && comuna>0 && inicioTemporada.length>0 && finTemporada.length>0 
+        if(nombre.length>0 && sitios.length>0 && direccion.length>0 && telefono.length>0 && correo.length>0 && comuna>0 && inicioTemporada.length>0 && finTemporada.length>0 
             && descripcion.length>0){
             let data = $("#form").serialize();
             $.ajax({

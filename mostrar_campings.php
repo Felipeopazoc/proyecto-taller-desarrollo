@@ -37,24 +37,27 @@
             </div>
             <div class="panel-admin">
             <h1>Listado de campings registrados</h1>
-            <table class="table table-responsive table-striped w-100 bg-light">
-                <thead class="thead-dark">
-                    <th>Nombre</th>
-                    <th>Cantidad puestos</th>
-                    <th>Dirección</th>
-                    <th>Correo</th>
-                    <th>Teléfono</th>
-                    <th>Comuna</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </thead>
-                <tbody>
+            
                     <?php
                     $sql = "select * from camping ca, ciudad c, estado e where ca.cod_ciudad = c.id_ciudad and e.id_estado = ca.id_estado ";
                     $resultado = mysqli_query($conn, $sql);
                     $filas = mysqli_num_rows($resultado);
 
                     if($filas){
+                        ?>
+                    <table class="table table-responsive table-striped w-100 bg-light">
+                        <thead class="thead-dark">
+                            <th>Nombre</th>
+                            <th>Cantidad puestos</th>
+                            <th>Dirección</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Comuna</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </thead>
+                        <tbody>
+                        <?php
                         while($camping = $resultado->fetch_row()){
                              ?>
                              <tr>
@@ -72,17 +75,21 @@
                              </tr>
                             <?php
                         }
+                        ?>
+                             </tbody>
+                            </table>
+
+                        <?php
+
                     }else{
                         ?>
-                          <p class="alert alert-danger text-center m-auto w-50 mb-3">No hay campings registrados</p>
+                          <p class="alert alert-danger text-center w-50 mb-3">No hay campings registrados</p>
                         <?php
                     }
 
                  ?>
 
-                </tbody>
-             
-            </table>
+              
             </div>
         </div>
         <!--Fin contenedor-->

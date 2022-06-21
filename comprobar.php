@@ -1,12 +1,10 @@
 <?php
-    include("../conexion_bd/conexion.php");
+    include("conexion_bd/conexion.php");
+
 
     if(!empty($_POST)){
-        $nombre = $_POST["nombre"];
-        //Sanitizamos el string del nombre
-        $nombre = trim($nombre);
-        $nombre = htmlspecialchars(strip_tags($nombre));
-        $query = "select * from camping where nombre like '%$nombre%'";
+        $id = $_POST["valor"];
+        $query = "select * from servicio where id_servicio=$id";
 
         $resultado = mysqli_query($conn,$query);
     
@@ -22,6 +20,4 @@
         exit;
     }
     exit;
-
 ?>
-

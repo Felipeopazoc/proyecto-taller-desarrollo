@@ -83,12 +83,6 @@
 
                 <!--Fin del modal-->
 
-                <table class="w-100 mt-2 ml-2 table table-responsive table-striped">
-                    <thead>
-                        <th>Imagen</th>
-                        <th>Acciones</th>
-                    </thead>
-                    <tbody>
                         <?php
                             $sql = "select * from imagenes where id_camping = $id";
                             $resultado = mysqli_query($conn,$sql);
@@ -96,6 +90,15 @@
                             $filas = mysqli_num_rows($resultado);
 
                             if($filas){
+                                ?>
+                                    
+                                <table class="w-100 mt-2 ml-2 table table-responsive table-striped">
+                                        <thead>
+                                            <th>Imagen</th>
+                                            <th>Acciones</th>
+                                        </thead>
+                                        <tbody>
+                                <?php
                                 while($imagen = $resultado->fetch_assoc()){
                                     ?>
                                      <tr>
@@ -104,6 +107,10 @@
                                     </tr>
                                     <?php
                                 }
+                                ?>
+                                      </tbody>
+                                    </table>
+                                <?php
 
                             }else{
                                 ?>
@@ -114,8 +121,7 @@
                             
                         
                         ?>
-                    </tbody>
-                </table>
+                  
 
             </div>
         </div>

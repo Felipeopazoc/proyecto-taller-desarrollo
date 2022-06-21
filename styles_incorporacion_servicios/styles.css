@@ -1,8 +1,144 @@
-body{
-    background-image: url("../img/fondo-formulario.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;
+*{
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.main-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    width: 100%;
+    background-color: #353940;
+    display: flex;
+    justify-content: flex-start;
+    height: 40px;
+}
+
+.logo{
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+   
+    left: 0;
+    margin-left: 0px;
+}
+.logo > h3{
+    margin-left: 15px;
+    line-height:35px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.login{
+    width: 30%;
+    margin-right: 0px;
+    display: flex;
+    justify-content: flex-start;
+}
+.login > h3{
+    margin-right: 15px;
+    line-height:35px;
+    color: white;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+}
+.barra-navegacion{
+    width: 20%;
+    min-height: 550px;
+    display: flex;
+    background-color: #7d8490;
+
     
-    font-family: Arial, Helvetica, sans-serif;
+}
+.panel-admin{
+    width: 80%;
+    border-left: 1px solid #9b9ea4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height:628px;
+  
+}
+.nav{
+    width: 100%;
+    margin: 0px auto;
+    margin-top: 40px;
+   
+}
+.ul{
+    width: 100%;
+    list-style: none;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.ul > li{
+    margin-bottom: 25px;
+    margin-left: 0;
+}
+
+
+.ul > li > a{
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+}
+
+.h1{
+    text-align: center;
+    font-size: 30px !important;
+    margin-top: 10px !important;
+}
+.box{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 0;
+  
+    margin-top: 0px !important;
+}
+.box > h1{
+    margin-left: 15px;
+    width: 100%;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-right: 5px;
+;
+}
+.box > button{
+    width: 25%;
+    margin-top: 10px;
+   
+}
+.box-img{
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+}
+
+.box-servicios{
+    width: 70%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0px;
+}
+.box-servicios > div{
+    margin-left: 0;
+}
+.formulario{
+    border: 1px solid rgb(170, 170, 170);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
 }
