@@ -125,7 +125,7 @@
 }
 
 .box-servicios{
-    width: 70%;
+    width: 80%;
     
     display: flex;
     flex-direction: column;
@@ -137,8 +137,10 @@
     margin-left: 0;
 }
 .formulario{
+    width: 75%;
+  
     border: 1px solid rgb(170, 170, 170);
     padding: 10px;
     border-radius: 20px;
-    margin-top: 10px;
+    margin-top: 10px!important;
 }

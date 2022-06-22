@@ -48,7 +48,7 @@ $(document).ready(function(){
                         swal("Excelente", "Los datos han sido ingresados", "success");
                         setTimeout(()=>{
                           
-                            location.href="listadoImagenes.php?id="+response;
+                            location.href="incorporacion_servicios.php?id="+response;
                         },2500);
                         
                     }

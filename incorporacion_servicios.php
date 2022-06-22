@@ -14,6 +14,8 @@
 <body>
     <?php
         include_once("./conexion_bd/conexion.php");
+        $id_camping = $_GET["id"];
+        
     ?>
     <div class="main-container">
         <header class="header">
@@ -37,10 +39,50 @@
             </div>
             
             <div class="panel-admin">
+               
+                        <?php
+                            $sql = "SELECT C.id_camping ,T.id_servicio, S.nombre_servicio, T.precio FROM CAMPING C, TIENE T, SERVICIO S WHERE C.id_camping = T.id_camping AND T.id_servicio = S.id_servicio AND C.id_camping = $id_camping";
+                            $query = mysqli_query($conn,$sql);
+                            $filas = mysqli_num_rows($query);
+                            if($filas){
+                                ?>
+                                    <h1 class="text-center">Servicios ya registrados</h1>
+                                    <table class="w-100 table table-hover">
+                                        <thead>
+                                            <td>Nombre servicio</td>
+                                            <td>Precio entrada</td>
+                                            <td>Acciones</td>
+                                        </thead>
+                                        <tbody>
+                                <?php
+                                while($tiene = $query->fetch_row()){
+                                    ?>
+                                   
+                                       <tr>
+                                            <td><?php echo $tiene[2] ?></td>
+                                            <td><?php echo $tiene[3] ?></td>
+                                            <td><a class="btn btn-danger" href="crud-servicios/delete.php?id_camping=<?php echo $tiene[0]?>&id_servicio=<?php echo $tiene[1]?>">Eliminar</a></td>
+                                       </tr>
+                                    <?php
+                                }
+
+                                ?>
+                                       </tbody>
+                                    </table>
+                                <?php
+                            }else{
+                                ?>
+                                    <p class="alert alert-danger w-75 mt-2 text-center">No existen registros de servicios para este camping</p>
+                                <?php
+
+                            }
+                        ?>
+                      
+                 
              
-                <div class="box">
-                    <h1 class="text-center">Seleccione los servicios que ofrece</h1>
-                </div>
+            
+                  
+                
                 <div class="box-servicios">
                    <?php
                         $sql = "select * from servicio";
@@ -49,10 +91,14 @@
                         $filas = mysqli_num_rows($resultado);
                   
                         if($filas){
-                            
+                            ?>
+                            <div class="box">
+                                <h1 class="text-center">Seleccione los servicios disponibles que ofrece su camping</h1>
+                            </div>
+                            <?php
                             while($servicio = $resultado->fetch_row()){
                                 ?>
-                                    <div class="form-check">
+                                    <div id="contenedor<?php echo $contador;?>" class="form-check">
                                         <label><?php echo $servicio[1];?></label>
                                         <input type="checkbox" class="form-check-input" value="<?php echo $servicio[0]?>" name="checkbox<?php echo $contador?>" id="select<?php echo $contador?>">
                                     </div>
@@ -65,7 +111,7 @@
                             ?>
                           
                             </div>
-                            <form id="form" action="probar.php" class="w-75 m-auto row formulario"  method="GET">
+                            <form id="form" action="crud-servicios/insert.php" class="m-auto row formulario"  method="POST">
                             <h1 id="title" class="text-center">Servicios seleccionados</h1>
                             <?php
                             // for($i=1;$i<$contador;$i++){
@@ -73,7 +119,9 @@
                                 $resultado2 = mysqli_query($conn,$sql);
                                 while($servicio = $resultado2->fetch_row()){
                                 ?>
+                                  <input type="hidden" id="id_camping" name="id_camping" value="<?php echo $id_camping?>" >
                                   <div id="servicio<?php echo $i?>" class="col-6">
+                                        
                                         <label class="form-label" for="">Nombre servicio:</label>
                                         <input  id="name<?php echo $i ?>" type="text" class="form-control">
                                         <input type="hidden" name="id<?php echo $i?>" id="id<?php echo $i?>" value="<?php echo $servicio[0]; ?>">
@@ -113,5 +161,6 @@
     </div>
     <script src="js/validar_checkbox.js"></script>
     <script src="js/validar_formulario_servicios.js"></script>
+    <script src="js/validar_servicios.js"></script>
 </body>
 </html>
