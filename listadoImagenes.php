@@ -26,7 +26,7 @@
                 <h3>Geocamping</h3>
             </div>
             <div class="login">
-                <h3><i class="fa-solid fa-user"></i></h3>
+                <h3><i class="fa-solid fa-bars"></i></h3>
             </div>
         </header>
         <!--Comienza el contenedor-->        
@@ -92,7 +92,7 @@
                             if($filas){
                                 ?>
                                     
-                                <table class="w-100 mt-2 ml-2 table table-responsive table-striped">
+                                <table class="w-100 mt-2 ml-2 table table-striped">
                                         <thead>
                                             <th>Imagen</th>
                                             <th>Acciones</th>
@@ -122,7 +122,10 @@
                         
                         ?>
                   
-
+                    <div class="w-75 m-auto d-flex">
+                        <a class="btn btn-danger" href="incorporacion_servicios.php?id=<?php echo $id?>">Incorporación de servicios</a>
+                        <a class="btn btn-success" href="resumen.php?id=<?php echo $id?>">Finalizar registro</a>
+                    </div>  
             </div>
         </div>
         <!--Fin contenedor-->

@@ -34,6 +34,7 @@
                         <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a href="index.php"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
                         <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                        <li><a href="listadoImagenes.php?id=<?php echo $id_camping?>"><i class="fa-solid fa-images"></i> Imágenes camping</a></li>
                     </ul>
                 </nav>
             </div>
@@ -46,9 +47,9 @@
                             $filas = mysqli_num_rows($query);
                             if($filas){
                                 ?>
-                                    <h1 class="text-center">Servicios ya registrados</h1>
-                                    <table class="w-100 table table-hover">
-                                        <thead>
+                                    <h1 class="titulo">Servicios registrados</h1>
+                                    <table class="w-100 table">
+                                        <thead class="">
                                             <td>Nombre servicio</td>
                                             <td>Precio entrada</td>
                                             <td>Acciones</td>
@@ -82,7 +83,9 @@
              
             
                   
-                
+                <div class="box">
+                        <h1 class="titulo">Seleccione los servicios disponibles que va ofrecer su camping</h1>
+                </div>
                 <div class="box-servicios">
                    <?php
                         $sql = "select * from servicio";
@@ -92,13 +95,11 @@
                   
                         if($filas){
                             ?>
-                            <div class="box">
-                                <h1 class="text-center">Seleccione los servicios disponibles que ofrece su camping</h1>
-                            </div>
+                           
                             <?php
                             while($servicio = $resultado->fetch_row()){
                                 ?>
-                                    <div id="contenedor<?php echo $contador;?>" class="form-check">
+                                    <div class="contenedor" id="contenedor<?php echo $contador;?>" class="form-check">
                                         <label><?php echo $servicio[1];?></label>
                                         <input type="checkbox" class="form-check-input" value="<?php echo $servicio[0]?>" name="checkbox<?php echo $contador?>" id="select<?php echo $contador?>">
                                     </div>
@@ -111,8 +112,8 @@
                             ?>
                           
                             </div>
-                            <form id="form" action="crud-servicios/insert.php" class="m-auto row formulario"  method="POST">
-                            <h1 id="title" class="text-center">Servicios seleccionados</h1>
+                            <form id="form" action="crud-servicios/insert.php" class="m-auto row formulario" style="margin-top:50px !important;"  method="POST">
+                            <h1 id="title" class="text-center">Ningún servicio seleccionado</h1>
                             <?php
                             // for($i=1;$i<$contador;$i++){
                                 $i=1;
@@ -136,21 +137,24 @@
                             }
                             ?>
                              <div id="boton" class="w-75 m-auto mt-2 row">
-                                <input class="btn btn-primary" type="submit" value="Enviar datos">
+                                <input class="btn btn-primary" type="submit" value="Registrar servicios">
                             </div>
-                               </form>
+                            </form>
                             <?php
                         }
 
                     ?>
                    
-              
+                <div class="w-75 m-auto d-flex justify-content-center">
+                    <a style="text-decoration:none; color:white;" href="index.php">Registrar camping</a>
+                    <a style="text-decoration: none; color:white;" href="listadoImagenes.php?id=<?php echo $id_camping?>">Incorporación de servicios</a>
+                </div>
 
-
+                <h1 class="titulo mt-4">Ilustración de ejemplo:</h1>
                 <div class="box-img">
-                        <img src="img/campings.jpg" width="300px" height="250px" alt="">
-                        <img src="img/piscina.jpg" width="300px" height="250px" alt="">
-                        <img src="img/Camping.jpg" width="300px" height="250px" alt="">
+                        <img src="img/campings.jpg"  alt="">
+                        <img src="img/piscina.jpg"  alt="">
+                        <img src="img/Camping.jpg"  alt="">
                        
                 </div>
                

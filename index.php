@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de camping </title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles_registro_camping/styles.css">
     <link rel="stylesheet" href="styles_registro_camping/responsive.css">
     <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -23,18 +24,32 @@
        $errores = "";
       ?>
     <div class="main-container">
-        <header class="header">
-            <div class="logo">
+        <header class="header2" id="header2">
+            <div class="logo2">
                 <h3>Geocamping</h3>
             </div>
             <div class="login">
-                <h3><i class="fa-solid fa-user"></i></h3>
+                <h3><i id="toggler" class="fa-solid fa-bars"></i></h3>
             </div>
         </header>
+        <header class="header" id="header">
+            <nav class="nav">
+                <a href="" class="logo nav-linked">Geocamping</a>
+                <button class="nav-toggle" aria-label="">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i> Home</a></a></li>
+                    <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
+                    <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                </ul>
+            </nav>
+        </header>
+    
         <!--Comienza el contenedor-->        
         <div class="content">
-            <div class="barra-navegacion">
-                <nav class="nav">
+            <div class="barra-navegacion" id="navbar">
+                <nav class="navegacion">
                     <ul class="ul">
                         <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a href="#"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
@@ -43,15 +58,15 @@
                 </nav>
             </div>
             <div class="panel-admin">
+             
                 <h2 class="h1">Formulario de registro</h2>
-                
-
                 <form class="formulario was-validated row" id="form" method="POST">
 
                     <div class="col-lg-7 col-md-6 col-sm-6">
                         <label class="form-label" for="name"> <i class="fa-solid fa-campfire"></i> Nombre camping: </label>
                         <input type="text" required name="nombre"  pattern="[a-zA-Z ]{8,100}" autocomplete="off" class="form-control efecto" id="name" placeholder="Mínimo 8 carácteres y sin números"   >
                         <div class="invalid-feedback" id="mensaje"></div>
+                        <div class="invalid-feedback">Por favor ingrese un nombre sin números</div>
                     </div>
 
 
@@ -64,6 +79,7 @@
                          <label class="form-label" for="direccion">Dirección: </label>
                          <input type="text" id="direccion" required placeholder="Dirección + numero" class="form-control" name="direccion">
                           <div class="invalid-feedback" id="mensaje2"></div>
+                          <div class="invalid-feedback">Por favor ingrese una dirección</div>
                      </div>
                      <div class="col-lg-4 col-md-5 col-sm-6 mb-2 ">
                         <label class="form-label" for="">Teléfono: </label>
@@ -74,6 +90,7 @@
                         <label class="form-label" for="">Correo: </label>
                         <input type="email" id="email" pattern="[^@ \t\r\n]+@gmail.com" placeholder="Formato: xxxx@gmail.com" required class="form-control"  name="email">
                         <div class="invalid-feedback" id="mensaje4"></div>
+                        <div class="invalid-feedback">Por favor ingrese un correo con el formato de gmail</div>
                      </div>
                      <div class="col-lg-4 col-md-5 col-sm-6 mb-md-2 mb-2">
                         <label class="form-label" for="">Region: </label>
@@ -85,7 +102,7 @@
                     </div>
                     <div class="col-lg-7 mb-2 ">
                         <label class="form-label" for="">Descripción: </label>
-                        <textarea maxlength="20" class="form-control" id="descripcion" placeholder="Breve descripción de su servicio" name="descripcion" required ></textarea>
+                        <textarea maxlength="20" class="form-control" id="descripcion" placeholder="Breve descripción del camping a registrar" name="descripcion" required ></textarea>
                         <div class="invalid-feedback">Por favor ingrese una descripción.</div>
                     </div>
                     <div class="col-lg-4 col-md-12 mb-md-2 col-sm-6 ">
@@ -105,6 +122,7 @@
                                 }
                             ?>
                         </select>
+                        <div class="invalid-feedback">Por favor ingrese una comuna.</div>
                     </div>
                   
                     <div class="col-lg-7 col-md-6 col-sm-6">
@@ -151,7 +169,7 @@
                     </div>
                    
                     <div class="col-lg-5 mt-2 row m-auto p-3">
-                        <button class="m-auto btn btn-primary" name="submit" id="button" type="submit">Enviar información</button>
+                        <button class="m-auto btn btn-primary" name="submit" id="button" type="submit">Siguiente</button>
                     </div>  
 
                 </form>
@@ -167,6 +185,7 @@
     <script src="./js/validar-correo.js"></script>
     <script src="./js/validar-temporada.js"></script>
     <script src="./js/enviardatos.js"></script>
-    
+    <script src="./js/menu-responsive.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 </html>

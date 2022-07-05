@@ -1,9 +1,8 @@
 $(document).ready(()=>{
   
     $("#form").hide();
-    $("#boton").hide();
-    $("#title").hide();
-
+  
+    
     $("#servicio1").hide();
     $("#precio1").hide();
     $("#servicio2").hide();
@@ -14,6 +13,10 @@ $(document).ready(()=>{
     $("#precio4").hide();
     $("#servicio5").hide();
     $("#precio5").hide();
+
+     if(!$("#select1").is(":checked") && !$("#select2").is(":checked") && !$("#select3").is(":checked") && !$("#select4").is(":checked") && !$("#select5").is(":checked")){
+         $("#boton").hide();
+     }
 
     //Valores de los ID
     /*
@@ -51,7 +54,7 @@ $(document).ready(()=>{
             
             $("#id1").attr("name","id1");
             $("#price1").attr("name","price1");
-
+            $("#title").text("Servicios seleccionados");
             $.ajax({
                 url : "comprobar.php",
                 type: "POST",
@@ -70,10 +73,10 @@ $(document).ready(()=>{
         } else {
             $("#servicio1").hide();
             $("#precio1").hide();
-            $("#boton").hide()
-            $("#title").hide();
-            console.log("Deseleccionado");
-           
+      
+            // $("#title").hide();
+            // console.log("Deseleccionado");
+            
             $("#id1").removeAttr("name");
             $("#price1").removeAttr("name");
         }
@@ -91,7 +94,7 @@ $(document).ready(()=>{
             $("#boton").show();
             $("#id2").attr("name","id2");
             $("#price2").attr("name","price2");
-
+            $("#title").text("Servicios seleccionados");
             $.ajax({
                 url : "comprobar.php",
                 type: "POST",
@@ -110,9 +113,8 @@ $(document).ready(()=>{
         } else {
             $("#servicio2").hide();
             $("#precio2").hide();
-            $("#boton").hide();
-            $("#title").hide();
-           console.log("Deseleccionado");
+            
+         
            $("#id2").removeAttr("name");
            $("#price2").removeAttr("name");
         }
@@ -129,7 +131,7 @@ $(document).ready(()=>{
             $("#title").show();
             $("#id3").attr("name","id3");
             $("#price3").attr("name","price3");
-
+            $("#title").text("Servicios seleccionados");
             $.ajax({
                 url : "comprobar.php",
                 type: "POST",
@@ -148,10 +150,10 @@ $(document).ready(()=>{
         } else {
             $("#servicio3").hide();
             $("#precio3").hide();
-            $("#boton").hide()
+          
             $("#id3").removeAttr("name");
             $("#price3").removeAttr("name");
-            $("#title").hide();
+        
         }
     });
 
@@ -161,7 +163,7 @@ $(document).ready(()=>{
             $("#precio4").show(); 
             $("#form").show();
             let valor = $(this).val();
-       
+            $("#title").text("Servicios seleccionados");
             $("#boton").show();
             $("#title").show();
             $("#id4").attr("name","id4");
@@ -185,11 +187,11 @@ $(document).ready(()=>{
         } else {
             $("#servicio4").hide();
             $("#precio4").hide();
-            $("#boton").hide();
+          
 
            $("#id4").removeAttr("name");
            $("#price4").removeAttr("name");
-           $("#title").hide();
+         
         }
     });
 
@@ -199,7 +201,8 @@ $(document).ready(()=>{
             $("#precio5").show(); 
             $("#form").show();
             let valor = $(this).val();
-       
+            $("#title").show();
+            $("#title").text("Servicios seleccionados");
             $("#boton").show();
             $("#id5").attr("name","id5");
             $("#price5").attr("name","price5");
@@ -221,7 +224,7 @@ $(document).ready(()=>{
         } else {
             $("#servicio5").hide();
             $("#precio5").hide();
-            $("#boton").hide()
+        
             $("#id5").removeAttr("name");
             $("#price5").removeAttr("name");
         }

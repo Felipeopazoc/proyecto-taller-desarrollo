@@ -1,7 +1,6 @@
 *{
     margin: 0px auto;
     padding: 0px;
-    color: white;
 }
 
 .main-container{
@@ -65,7 +64,6 @@
     flex-direction: column;
     justify-content: flex-start;
     min-height:628px;
-    background-color: black;
   
 }
 .nav{
@@ -98,67 +96,8 @@
     font-size: 30px !important;
     margin-top: 10px !important;
 }
-.box{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-left: 0;
-    margin-top: 0px !important;
-    margin-bottom: 15px;
-}
-/*
-.box > h1{
-    margin-left: 15px;
-    width: 100%;
-    font-size: 30px;
-    margin-top: 10px;
-    margin-right: 5px;
-;
-}
-*/
-.box > button{
-    width: 25%;
-    margin-top: 10px;
-   
-}
-.box-img{
-    width: 100%;
-    display: flex;
-    margin-top: 20px;
-
-}
-.box-img > img{
-    width: 30%;
-    border-radius: 10px;
-}
-
-.box-servicios{
-    width:99%;
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 0px;
-}
-.box-servicios > .contenedor{
-    width: 20%;
-   
-    margin-left: 5px;
-    text-align: center;
-}
 .formulario{
-    width: 85%;
-  
-    border: 1px solid rgb(170, 170, 170);
-    padding: 10px;
-    border-radius: 20px;
-    margin-top: 10px !important;
-}
-.titulo{
-    font-size: 30px;
-    color: white;
-    margin-top: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    margin-left: 10px;
+    
 }

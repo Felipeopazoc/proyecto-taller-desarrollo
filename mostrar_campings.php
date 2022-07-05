@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Campings</title>
     <link rel="stylesheet" href="styles_mostrar_camping/styles.css">
     <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -70,7 +70,9 @@
                                  <td><i class="fa-solid fa-check"></i></td>
                                  <td>
                                      <a class="btn btn-primary mb-2" href="listadoImagenes.php?id=<?php echo $camping[0] ?>"><i class="fa-solid fa-image"></i></a>
+                                     <a class="btn btn-warning mb-2" href="incorporacion_servicios.php?id=<?php echo $camping[0];?>"><i class="fa-solid fa-water-ladder"></i></a>
                                      <a class="btn btn-danger mb-2" href="crud-camping/delete.php?id=<?php echo $camping[0] ?>"><i class="fa-solid fa-trash-can"></i></a>
+                                    
                                 </td>
                              </tr>
                             <?php

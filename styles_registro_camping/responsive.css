@@ -1,49 +1,21 @@
-/*
-
-@media (max-width:425px) {
-    h1{
-        font-size: 24px;
-    }
-}
-
-@media (max-width:977px){
-    .li{
-        font-size: 24px;
-    }
-}
-@media (max-width:768px) {
-    .clear-fix{
-        float: none;
-        clear: both;
-    }
-    .formulario{
-        margin-top: 200px;
-    }
-}
-
-@media (max-width:678px){
-    .formulario{
-        width: 100%;
-    }
-}
-
-*/
-
-@media (max-width:426px) {
-    .content{
-        flex-direction: column;
-    }
+@media(max-width:769px){
     .barra-navegacion{
-        width: 100%;
+        display: none;
     }
     .panel-admin{
         width: 100%;
+        margin-top: 0;
     }
-    .ul{
-        justify-content: center;
-        align-items: center;
+
+    
+}
+
+@media(max-width:1440px){
+    
+    .navegacion{
+        margin-top: 30px;
     }
-    .ul > li > a{
-        text-align: center;
+    .panel-admin{
+        margin-top: 0;
     }
 }
