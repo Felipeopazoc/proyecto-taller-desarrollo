@@ -135,11 +135,12 @@
                             
                         
                         ?>
-                  
+                    <!--
                     <div class="w-75 m-auto d-flex">
                         <a class="btn btn-danger" href="incorporacion_servicios.php?id=<?php echo $id?>">Incorporación de servicios</a>
                         <a class="btn btn-success" href="resumen.php?id=<?php echo $id?>">Finalizar registro</a>
-                    </div>  
+                    </div>
+                    -->  
             </div>
         </div>
         <!--Fin contenedor-->
