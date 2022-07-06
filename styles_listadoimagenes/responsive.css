@@ -1,0 +1,16 @@
+@media(max-width:769px){
+    .barra-navegacion{
+        display: none;
+    }
+    .panel-admin{
+        width: 99%;
+    }
+    .box{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .box > button{
+        width: 38%;
+    }
+}

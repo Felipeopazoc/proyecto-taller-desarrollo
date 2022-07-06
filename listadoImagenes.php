@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imágenes</title>
     <link rel="stylesheet" href="styles_listadoimagenes/styles.css">
+    <link rel="stylesheet" href="styles_listadoimagenes/responsive.css">
     <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -21,18 +22,31 @@
        }
       ?>
     <div class="main-container">
-        <header class="header">
-            <div class="logo">
+        <header class="header2" id="header2">
+            <div class="logo2">
                 <h3>Geocamping</h3>
             </div>
-            <div class="login">
-                <h3><i class="fa-solid fa-bars"></i></h3>
-            </div>
         </header>
+        <header class="header" id="header">
+            <nav class="nav">
+                <a href="" class="logo nav-linked">Geocamping</a>
+                <button class="nav-toggle" aria-label="">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i> Home</a></a></li>
+                    <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
+                    <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+
         <!--Comienza el contenedor-->        
         <div class="content">
             <div class="barra-navegacion">
-                <nav class="nav">
+                <nav class="navegacion">
                     <ul class="ul">
                         <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a href="index.php"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
@@ -44,7 +58,7 @@
             <div class="panel-admin">
                 <div class="box">
                     <h1>Listado de imágenes de camping seleccionado</h1>
-                    <button type="button" class=" btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>   
+                    <button type="button" class="boton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>   
                 </div>
                  
                 <!--Inicio de modal-->
@@ -114,7 +128,7 @@
 
                             }else{
                                 ?>
-                                    <p class="alert alert-danger w-50 text-center mt-2">No hay imágenes registradas para este camping</p>
+                                    <p style="z-index:-1" class="alert alert-danger w-50 text-center mt-2">No hay imágenes registradas para este camping</p>
                                 <?php
 
                             }
@@ -131,17 +145,7 @@
         <!--Fin contenedor-->
 
     </div>
-    <script >
-        let boton = document.getElementById("boton");
-        boton.addEventListener("click",(e)=>{
-           
-            swal({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success",
-            button: "Aww yiss!",
-            });
-        });
-    </script>
+    <script src="./js/menu-responsive.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 </html>
