@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
     <link rel="stylesheet" href="styles_incorporacion_servicios/styles.css">
+    <link rel="stylesheet" href="styles_incorporacion_servicios/responsive.css">
     <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -18,22 +19,32 @@
         
     ?>
     <div class="main-container">
-        <header class="header">
-            <div class="logo">
+        <header class="header2" id="header2">
+            <div class="logo2">
                 <h3>Geocamping</h3>
             </div>
-            <div class="login">
-                <h3><i class="fa-solid fa-user"></i></h3>
-            </div>
+            
+        </header>
+        <header class="header" id="header">
+            <nav class="nav">
+                <a href="" class="logo nav-linked">Geocamping</a>
+                <button class="nav-toggle" aria-label="">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i> Home</a></a></li>
+                    <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
+                    <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                </ul>
+            </nav>
         </header>
         <!--Comienza el contenedor-->        
         <div class="content">
             <div class="barra-navegacion">
-                <nav class="nav">
+                <nav class="navegacion">
                     <ul class="ul">
                         <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a href="index.php"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
-                        <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
                         <li><a href="listadoImagenes.php?id=<?php echo $id_camping?>"><i class="fa-solid fa-images"></i> Imágenes camping</a></li>
                     </ul>
                 </nav>
@@ -71,12 +82,8 @@
                                        </tbody>
                                     </table>
                                 <?php
-                            }else{
-                                ?>
-                                    <p class="alert alert-danger w-75 mt-2 text-center">No existen registros de servicios para este camping</p>
-                                <?php
-
                             }
+                            
                         ?>
                       
                  
@@ -84,7 +91,7 @@
             
                   
                 <div class="box">
-                        <h1 class="titulo">Seleccione los servicios disponibles que va ofrecer su camping</h1>
+                        <h1 class="titulo2">Servicios disponibles que va ofrecer su camping</h1>
                 </div>
                 <div class="box-servicios">
                    <?php
@@ -112,7 +119,7 @@
                             ?>
                           
                             </div>
-                            <form id="form" action="crud-servicios/insert.php" class="m-auto row formulario" style="margin-top:50px !important;"  method="POST">
+                            <form id="form" action="crud-servicios/insert.php" class="m-auto  row formulario" style="margin-top:50px !important;"  method="POST">
                             <h1 id="title" class="text-center">Ningún servicio seleccionado</h1>
                             <?php
                             // for($i=1;$i<$contador;$i++){
@@ -121,17 +128,18 @@
                                 while($servicio = $resultado2->fetch_row()){
                                 ?>
                                   <input type="hidden" id="id_camping" name="id_camping" value="<?php echo $id_camping?>" >
-                                  <div id="servicio<?php echo $i?>" class="col-6">
+                                  <div id="servicio<?php echo $i?>" class=" col-sm-10 col-md-6">
                                         
                                         <label class="form-label" for="">Nombre servicio:</label>
                                         <input  id="name<?php echo $i ?>" type="text" class="form-control">
                                         <input type="hidden" name="id<?php echo $i?>" id="id<?php echo $i?>" value="<?php echo $servicio[0]; ?>">
                                        
                                   </div>
-                                  <div id="precio<?php echo $i?>" class="col-6">
+                                  <div id="precio<?php echo $i?>" class="col-sm-10  col-md-6">
                                         <label class="form-label" for="">$Precio: </label>
                                         <input type="number" name="price<?php echo $i?>" id="price<?php echo $i ?>" class="form-control">
                                   </div>
+                                  
                                 <?php
                                 $i++;
                             }
@@ -144,13 +152,12 @@
                         }
 
                     ?>
-                   
-                <div class="w-75 m-auto d-flex justify-content-center">
-                    <a style="text-decoration:none; color:white;" href="index.php">Registrar camping</a>
-                    <a style="text-decoration: none; color:white;" href="listadoImagenes.php?id=<?php echo $id_camping?>">Incorporación de servicios</a>
+                
+                <div class="box-button">
+                    <a class="btn btn-danger  w-75 m-auto" href="listadoImagenes.php?id=<?php echo $id_camping?>">Incorporar Imágenes</a>
                 </div>
 
-                <h1 class="titulo mt-4">Ilustración de ejemplo:</h1>
+                <h1 class="titulo">Ilustración de ejemplo:</h1>
                 <div class="box-img">
                         <img src="img/campings.jpg"  alt="">
                         <img src="img/piscina.jpg"  alt="">
@@ -166,5 +173,7 @@
     <script src="js/validar_checkbox.js"></script>
     <script src="js/validar_formulario_servicios.js"></script>
     <script src="js/validar_servicios.js"></script>
+    <script src="js/menu-responsive.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 </html>

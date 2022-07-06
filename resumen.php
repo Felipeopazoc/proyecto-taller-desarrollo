@@ -53,9 +53,8 @@
             <div class="barra-navegacion">
                 <nav class="nav">
                     <ul class="ul">
-                        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a href="index.php"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
-                        <li><a href="#"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+    
                     </ul>
                 </nav>
             </div>
@@ -125,18 +124,13 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <label for="" class="form-label">Mes fin Temporada</label>
-                        <select required class="form-select" name="fin" id="fin">
+                        <select disabled required class="form-select" name="fin" id="fin">
                             <option value="">Seleccione un mes</option>
                             <option selected value="<?php echo $fila_mes_final["id_mes"] ; ?>"><?php echo $fila_mes_final["nombre"] ; ?></option>
                         </select>
                         <div class="invalid-feedback">Por favor seleccione un mes.</div>
                         <div id="mensaje6" ></div>
                     </div>
-
-                    <div class="col-lg-5 mt-2 row m-auto p-3">
-                        <button class="m-auto btn btn-primary" name="submit" id="button" type="submit">Modificar campos</button>
-                    </div>  
-
                     </form>
                 </form> 
                 <h2>Servicios elegidos</h2>

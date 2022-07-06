@@ -1,0 +1,42 @@
+@media(max-width:769px){
+    .barra-navegacion{
+        display: none;
+    }
+    .panel-admin{
+        width: 100%;
+        margin-top: 0px;
+    }
+    .titulo{
+        font-size: 20px;
+    }
+}
+@media(max-width:531px){
+    .formulario{
+        width: 100%;
+    }
+    .borde{
+        border-bottom: 1px solid black; 
+    }
+}
+@media(max-width:1440px){
+    .panel-admin{
+        margin-top: 0px;
+    }
+}
+@media(max-width:435px){
+    .box-servicios{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .box-servicios > .contenedor{
+        width: 99%;
+    }
+    .titulo2{
+        font-size: 25px;
+        padding: 10px;
+        text-align: center;
+    }
+    .contenedor > label{
+         font-size: 20px;
+    }
+}
