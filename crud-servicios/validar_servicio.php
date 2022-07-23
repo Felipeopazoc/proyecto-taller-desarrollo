@@ -5,7 +5,7 @@ include("../conexion_bd/conexion.php");
 if(!empty($_POST)){
     $id = $_POST["id1"];
     $id_camping = $_POST["id_camping"];
-    $query = "select * from TIENE T where T.id_servicio = $id and T.id_camping = $id_camping";
+    $query = "select * from tiene t where t.id_servicio = $id and t.id_camping = $id_camping";
 
     $resultado = mysqli_query($conn,$query);
 

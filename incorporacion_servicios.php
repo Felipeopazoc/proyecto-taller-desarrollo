@@ -53,7 +53,7 @@
             <div class="panel-admin">
                
                         <?php
-                            $sql = "SELECT C.id_camping ,T.id_servicio, S.nombre_servicio, T.precio FROM CAMPING C, TIENE T, SERVICIO S WHERE C.id_camping = T.id_camping AND T.id_servicio = S.id_servicio AND C.id_camping = $id_camping";
+                            $sql = "select c.id_camping ,t.id_servicio, s.nombre_servicio, t.precio from camping c, tiene t, servicio s where c.id_camping = t.id_camping and t.id_servicio = s.id_servicio and c.id_camping = $id_camping";
                             $query = mysqli_query($conn,$sql);
                             $filas = mysqli_num_rows($query);
                             if($filas){

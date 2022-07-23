@@ -19,7 +19,8 @@ $(document).ready(function(){
                     if(response.length>8){
                         let objetoServicio = JSON.parse(response);
                         if(objetoServicio.id_servicio==data1){
-                            $("#contenedor1").hide();
+                            $("#select1").prop('checked',true);
+                            $("#select1").prop('disabled',true);
                             console.log(objetoServicio.id_servicio);
                            
                         }
@@ -35,7 +36,8 @@ $(document).ready(function(){
                     if(response.length>8){
                         let objetoServicio = JSON.parse(response);
                         if(objetoServicio.id_servicio==data2){
-                            $("#contenedor2").hide();
+                            $("#select2").prop('checked',true);
+                            $("#select2").prop('disabled',true);
                             console.log(objetoServicio.id_servicio);
                             
                         }
@@ -51,7 +53,9 @@ $(document).ready(function(){
                     if(response.length>8){
                         let objetoServicio = JSON.parse(response);
                         if(objetoServicio.id_servicio==data3){
-                            $("#contenedor3").hide();
+            
+                            $("#select3").prop('checked',true);
+                            $("#select3").prop('disabled',true);
                             console.log(objetoServicio.id_servicio);
                            
                         }
@@ -67,7 +71,9 @@ $(document).ready(function(){
                     if(response.length>8){
                         let objetoServicio = JSON.parse(response);
                         if(objetoServicio.id_servicio==data4){
-                            $("#contenedor4").hide();
+                            
+                            $("#select4").prop('checked',true);
+                            $("#select4").prop('disabled',true);
                             console.log(objetoServicio.id_servicio);
                            
                         }
@@ -83,7 +89,9 @@ $(document).ready(function(){
                     if(response.length>8){
                         let objetoServicio = JSON.parse(response);
                         if(objetoServicio.id_servicio==data5){
-                            $("#contenedor5").hide();
+                          //  $("#contenedor5").hide();
+                             $("#select5").prop('checked',true);
+                             $("#select5").prop('disabled',true);
                             console.log(objetoServicio.id_servicio);
                             
                         }
