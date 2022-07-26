@@ -128,7 +128,7 @@
 
                             }else{
                                 ?>
-                                    <p style="z-index:-1" class="alert alert-danger w-50 text-center mt-2">No hay imágenes registradas para este camping</p>
+                                    <p style="z-index:-1" class="alert alert-danger w-75 text-center mt-2">No hay imágenes registradas para este camping</p>
                                 <?php
 
                             }
