@@ -54,6 +54,7 @@ $(document).ready(()=>{
             
             $("#id1").attr("name","id1");
             $("#price1").attr("name","price1");
+            $("#price1").prop('required',true);
             $("#title").text("Servicios seleccionados");
             $.ajax({
                 url : "comprobar.php",
@@ -76,7 +77,7 @@ $(document).ready(()=>{
       
             // $("#title").hide();
             // console.log("Deseleccionado");
-            
+            $("#price1").prop('required',false);
             $("#id1").removeAttr("name");
             $("#price1").removeAttr("name");
         }
@@ -94,6 +95,7 @@ $(document).ready(()=>{
             $("#boton").show();
             $("#id2").attr("name","id2");
             $("#price2").attr("name","price2");
+            $("#price2").prop('required',true);
             $("#title").text("Servicios seleccionados");
             $.ajax({
                 url : "comprobar.php",
@@ -114,7 +116,7 @@ $(document).ready(()=>{
             $("#servicio2").hide();
             $("#precio2").hide();
             
-         
+            $("#price2").prop('required',false);
            $("#id2").removeAttr("name");
            $("#price2").removeAttr("name");
         }
@@ -132,6 +134,7 @@ $(document).ready(()=>{
             $("#id3").attr("name","id3");
             $("#price3").attr("name","price3");
             $("#title").text("Servicios seleccionados");
+            $("#price3").prop('required',true);
             $.ajax({
                 url : "comprobar.php",
                 type: "POST",
@@ -150,7 +153,7 @@ $(document).ready(()=>{
         } else {
             $("#servicio3").hide();
             $("#precio3").hide();
-          
+            $("#price3").prop('required',false);
             $("#id3").removeAttr("name");
             $("#price3").removeAttr("name");
         
@@ -168,7 +171,7 @@ $(document).ready(()=>{
             $("#title").show();
             $("#id4").attr("name","id4");
             $("#price4").attr("name","price4");
-
+            $("#price4").prop('required',true);
             $.ajax({
                 url : "comprobar.php",
                 type: "POST",
@@ -187,7 +190,7 @@ $(document).ready(()=>{
         } else {
             $("#servicio4").hide();
             $("#precio4").hide();
-          
+            $("#price4").prop('required',false);
 
            $("#id4").removeAttr("name");
            $("#price4").removeAttr("name");
@@ -206,6 +209,7 @@ $(document).ready(()=>{
             $("#boton").show();
             $("#id5").attr("name","id5");
             $("#price5").attr("name","price5");
+            $("#price5").prop('required',true);
             $.ajax({
                 url : "comprobar.php",
                 type: "POST",
@@ -224,7 +228,7 @@ $(document).ready(()=>{
         } else {
             $("#servicio5").hide();
             $("#precio5").hide();
-        
+            $("#price5").prop('required',false);
             $("#id5").removeAttr("name");
             $("#price5").removeAttr("name");
         }
