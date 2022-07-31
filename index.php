@@ -72,7 +72,7 @@
 
                     <div class="col-lg-4 col-md-5 col-sm-5">
                         <label class="form-label" for="sitios">Cantidad de sitios: </label>
-                        <input type="number" required id="sitios" max="40" " placeholder="Sitios disponibles"  class="form-control" name="cantidad_sitios">
+                        <input type="number" required id="sitios" max="40" min="1" placeholder="Sitios disponibles"  class="form-control" name="cantidad_sitios">
                         <div class="invalid-feedback">Por favor ingrese cantidad, máximo 40 sitios.</div>
                      </div>
                      <div class="col-lg-7 col-md-6 col-sm-11">

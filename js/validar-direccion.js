@@ -21,7 +21,7 @@ $(document).ready(function(){
                     }
                 }else{
                         $("#mensaje2").show();
-                        $("#mensaje2").text("Dirección disponible");
+                        //$("#mensaje2").text("Dirección disponible");
                         $("#mensaje2").removeClass("invalid-feedback");
                         $("#mensaje2").addClass("alerta-disponible");
 

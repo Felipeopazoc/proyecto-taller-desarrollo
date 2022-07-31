@@ -26,7 +26,7 @@ $(document).ready(function(){
                 }else{
 
                     $("#mensaje4").show();
-                    $("#mensaje4").text("Este correo está disponible");
+                    //$("#mensaje4").text("Este correo está disponible");
                     $("#mensaje4").removeClass("invalid-feedback");
                     $("#mensaje4").addClass("alerta-disponible");
                     $("#button").attr("disabled",false);
