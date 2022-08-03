@@ -36,7 +36,7 @@
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i> Home</a></a></li>
                     <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
-                    <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                    <!-- <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
                 </ul>
             </nav>
         </header>
@@ -50,7 +50,7 @@
                     <ul class="ul">
                         <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a href="index.php"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
-                        <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                        <!-- <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
                     </ul>
                 </nav>
             </div>
@@ -140,7 +140,7 @@
                         <a class="btn btn-danger" href="incorporacion_servicios.php?id=<?php echo $id?>">Incorporación de servicios</a>
                         <a class="btn btn-success" href="resumen.php?id=<?php echo $id?>">Finalizar registro</a>
                     </div>
-                    -->  
+                    --> 
             </div>
         </div>
         <!--Fin contenedor-->

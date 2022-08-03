@@ -34,7 +34,7 @@
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i> Home</a></a></li>
                     <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
-                    <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                    <!-- <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
                 </ul>
             </nav>
         </header>
@@ -62,7 +62,7 @@
                                     <table class="w-100 table">
                                         <thead class="">
                                             <td>Nombre servicio</td>
-                                            <td>Precio entrada</td>
+                                            <td>Precio entrada x persona</td>
                                             <td>Acciones</td>
                                         </thead>
                                         <tbody>
@@ -72,7 +72,7 @@
                                    
                                        <tr>
                                             <td><?php echo $tiene[2] ?></td>
-                                            <td><?php echo $tiene[3] ?></td>
+                                            <td>$<?php echo $tiene[3] ?></td>
                                             <td><a class="btn btn-danger" href="crud-servicios/delete.php?id_camping=<?php echo $tiene[0]?>&id_servicio=<?php echo $tiene[1]?>">Eliminar</a></td>
                                        </tr>
                                     <?php
@@ -137,7 +137,7 @@
                                   </div>
                                   <div id="precio<?php echo $i?>" class="col-sm-10  col-md-6">
                                         <label class="form-label" for="">$Precio: </label>
-                                        <input type="number" name="price<?php echo $i?>" id="price<?php echo $i ?>" class="form-control">
+                                        <input type="number" min="500" name="price<?php echo $i?>" id="price<?php echo $i ?>" class="form-control">
                                   </div>
                                   
                                 <?php

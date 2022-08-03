@@ -41,7 +41,7 @@
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i> Home</a></a></li>
                     <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
-                    <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                    <!-- <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
                 </ul>
             </nav>
         </header>
@@ -53,7 +53,7 @@
                     <ul class="ul">
                         <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a href="#"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
-                        <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li>
+                        <!-- <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
                     </ul>
                 </nav>
             </div>
@@ -83,7 +83,7 @@
                      </div>
                      <div class="col-lg-4 col-md-5 col-sm-6 mb-2 ">
                         <label class="form-label" for="">Teléfono: </label>
-                        <input type="text" maxlength="9" placeholder="123456789 -> 9 dígitos" required class="form-control" id="telefono" name="telefono">
+                        <input type="number" maxlength="9" placeholder="123456789 -> 9 dígitos" required class="form-control" id="telefono" name="telefono">
                         <div class="invalid-feedback" id="mensaje3"></div>
                     </div>
                     <div class="col-lg-7 col-md-6 col-sm-5 mb-2">
