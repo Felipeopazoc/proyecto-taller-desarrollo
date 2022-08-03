@@ -77,7 +77,7 @@
                      </div>
                      <div class="col-lg-7 col-md-6 col-sm-11">
                          <label class="form-label" for="direccion">Dirección: </label>
-                         <input type="text" id="direccion" required placeholder="Dirección + numero" class="form-control" name="direccion">
+                         <input type="text" id="direccion" required placeholder="Dirección + número" class="form-control" name="direccion">
                           <div class="invalid-feedback" id="mensaje2"></div>
                           <div class="invalid-feedback">Por favor ingrese una dirección</div>
                      </div>
