@@ -85,73 +85,37 @@
                             }
                             
                         ?>
-                      
-                 
-             
-            
                   
-                <div class="box">
+                <!-- <div class="box">
                         <h1 class="titulo2">Servicios disponibles que va ofrecer su camping</h1>
-                </div>
-                <div class="box-servicios">
-                   <?php
+                </div> -->
+
+                <div id="form" class="w-75 row m-auto">
+                    <h1 style="font-size:25px ;">Por favor pinche un servicio e ingrese precio de entrada para cada servicio </h1>
+                    <input type="hidden" name="id_camping" id="id_camping" value="<?php echo $id_camping; ?>">
+                        <?php
                         $sql = "select * from servicio";
                         $resultado = mysqli_query($conn,$sql);
-                        $contador=1;
                         $filas = mysqli_num_rows($resultado);
-                  
                         if($filas){
-                            ?>
-                           
-                            <?php
                             while($servicio = $resultado->fetch_row()){
-                                ?>
-                                    <div class="contenedor" id="contenedor<?php echo $contador;?>" class="form-check">
-                                        <label><?php echo $servicio[1];?></label>
-                                        <input type="checkbox" class="form-check-input" value="<?php echo $servicio[0]?>" name="checkbox<?php echo $contador?>" id="select<?php echo $contador?>">
-                                    </div>
-                                  
-                                <?php
-                                $contador++;
+                            ?>
+                            <div class="col-5">
+                                <label for=""><?php echo $servicio[1] ?></label>
+                                <input type="checkbox" name="servicios[]" value="<?php echo $servicio[0] ?>">
+                            </div>
+                            <?php
+                            }
 
-                            }
-                            
-                            ?>
-                          
-                            </div>
-                            <form id="form" action="crud-servicios/insert.php" class="m-auto  row formulario" style="margin-top:50px !important;"  method="POST">
-                            <h1 id="title" class="text-center">Ningún servicio seleccionado</h1>
-                            <?php
-                            // for($i=1;$i<$contador;$i++){
-                                $i=1;
-                                $resultado2 = mysqli_query($conn,$sql);
-                                while($servicio = $resultado2->fetch_row()){
-                                ?>
-                                  <input type="hidden" id="id_camping" name="id_camping" value="<?php echo $id_camping?>" >
-                                  <div id="servicio<?php echo $i?>" class=" col-sm-10 col-md-6">
-                                        
-                                        <label class="form-label" for="">Nombre servicio:</label>
-                                        <input  id="name<?php echo $i ?>" type="text" class="form-control">
-                                        <input type="hidden" name="id<?php echo $i?>" id="id<?php echo $i?>" value="<?php echo $servicio[0]; ?>">
-                                       
-                                  </div>
-                                  <div id="precio<?php echo $i?>" class="col-sm-10  col-md-6">
-                                        <label class="form-label" for="">$Precio: </label>
-                                        <input type="number" min="500" name="price<?php echo $i?>" id="price<?php echo $i ?>" class="form-control">
-                                  </div>
-                                  
-                                <?php
-                                $i++;
-                            }
-                            ?>
-                             <div id="boton" class="w-75 m-auto mt-2 row">
-                                <input class="btn btn-primary" type="submit" value="Registrar servicios">
-                            </div>
-                            </form>
-                            <?php
                         }
+                        ?>
+                        
+                        
+                    </div>
+                    <div id="formulario">
 
-                    ?>
+                    </div>
+                          
                 
                 <div class="box-button">
                     <a class="btn btn-danger  w-75 m-auto" href="listadoImagenes.php?id=<?php echo $id_camping?>">Incorporar Imágenes</a>
@@ -170,9 +134,7 @@
         <!--Fin contenedor-->
 
     </div>
-    <script src="js/validar_checkbox.js"></script>
-    <script src="js/validar_formulario_servicios.js"></script>
-    <script src="js/validar_servicios.js"></script>
+    <script src="js/validacion-servicios.js"></script>
     <script src="js/menu-responsive.js"></script>
     <script src="js/menu.js"></script>
 </body>

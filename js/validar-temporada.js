@@ -14,8 +14,8 @@ $(document).ready(function(){
                 if(response!=1){
                     //Mensaje de alerta
                     $("#button").attr("disabled",true);
-                    $("#mensaje5").text("Rango correcto Octubre a marzo o Enero a marzo");
-                    $("#mensaje6").text("Rango correcto Octubre a marzo o Enero a marzo");
+                    $("#mensaje5").text("No puede elegir el mismo mes");
+                    $("#mensaje6").text("No puede elegir el mismo mes");
                     $("#mensaje5").addClass("alerta-error");
                     $("#mensaje6").addClass("alerta-error");
                     $("#mensaje5").show();

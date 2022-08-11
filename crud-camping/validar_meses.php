@@ -8,7 +8,7 @@ if(!empty($_POST)){
     $fin = $_POST["fin"];
     $fin  = (int)$fin;
 
-    if($inicio>=10 && $fin <=3 || $inicio >=1 && $fin<=3){
+    if($inicio != $fin){
         echo 1;
         exit;
     }

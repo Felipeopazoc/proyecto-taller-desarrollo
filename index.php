@@ -88,7 +88,7 @@
                     </div>
                     <div class="col-lg-7 col-md-6 col-sm-5 mb-2">
                         <label class="form-label" for="">Correo: </label>
-                        <input type="email" id="email" placeholder="Formato: xxxx@gmail.com" required class="form-control"  name="email">
+                        <input type="email" id="email" placeholder="Formato: xxxx@ejemplo.com" required class="form-control"  name="email">
                         <div class="invalid-feedback" id="mensaje4"></div>
                         <div class="invalid-feedback">Por favor ingrese un correo</div>
                      </div>

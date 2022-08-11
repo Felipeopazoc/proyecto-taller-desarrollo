@@ -116,7 +116,7 @@
                                 while($imagen = $resultado->fetch_assoc()){
                                     ?>
                                      <tr>
-                                         <td class=""><?php echo '<img width=200px height=200px src="data:image/jpg;base64,'.base64_encode( $imagen['imagen'] ).'"/>';  ?></td>
+                                         <td class=""><?php echo '<img width=400px height=300px src="data:image/jpg;base64,'.base64_encode( $imagen['imagen'] ).'"/>';  ?></td>
                                          <td><a class="mt-4 btn btn-danger" href="crud-imagenes/delete.php?idImagen=<?php echo $imagen["id_imagen"]."&id_camping=$id"; ?>"><i class="fa-solid fa-trash-can"></i></a></td>
                                     </tr>
                                     <?php
