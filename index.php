@@ -88,15 +88,14 @@
                     </div>
                     <div class="col-lg-7 col-md-6 col-sm-5 mb-2">
                         <label class="form-label" for="">Correo: </label>
-                        <input type="email" id="email" pattern="[^@ \t\r\n]+@gmail.com" placeholder="Formato: xxxx@gmail.com" required class="form-control"  name="email">
+                        <input type="email" id="email" placeholder="Formato: xxxx@gmail.com" required class="form-control"  name="email">
                         <div class="invalid-feedback" id="mensaje4"></div>
-                        <div class="invalid-feedback">Por favor ingrese un correo con el formato de gmail</div>
+                        <div class="invalid-feedback">Por favor ingrese un correo</div>
                      </div>
                      <div class="col-lg-4 col-md-5 col-sm-6 mb-md-2 mb-2">
                         <label class="form-label" for="">Region: </label>
-                        <select required name="select_region" id="" class="form-select">
-                            <option value="">Seleccione una región</option>
-                            <option value="1">Región del bio bio</option>
+                        <select disabled required name="select_region" id="" class="form-select">
+                            <option selected value="1">Región del bio bio</option>
                         </select>
                         <div style="color:green; font-size:15px; margin-left:3px; margin-top:3px;" class="w-100">Solo disponible esta región de momento.</div>
                     </div>
