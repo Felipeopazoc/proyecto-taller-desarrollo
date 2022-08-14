@@ -91,7 +91,7 @@
                 </div> -->
 
                 <div id="form" class="w-75 row m-auto">
-                    <h1 style="font-size:25px ;">Por favor pinche un servicio e ingrese precio de entrada para cada servicio </h1>
+                    <h1 style="font-size:25px ;" class="mt-2">Por favor pinche un servicio e ingrese precio de entrada para cada servicio </h1>
                     <input type="hidden" name="id_camping" id="id_camping" value="<?php echo $id_camping; ?>">
                         <?php
                         $sql = "select * from servicio";
@@ -100,7 +100,7 @@
                         if($filas){
                             while($servicio = $resultado->fetch_row()){
                             ?>
-                            <div class="col-5">
+                            <div class="col-12 service text-center mb-3">
                                 <label for=""><?php echo $servicio[1] ?></label>
                                 <input type="checkbox" name="servicios[]" value="<?php echo $servicio[0] ?>">
                             </div>

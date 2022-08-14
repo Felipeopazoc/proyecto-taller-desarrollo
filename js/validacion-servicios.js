@@ -76,6 +76,7 @@ $(document).ready(()=>{
             input.setAttribute("class","form-control");
 
             input_precio.setAttribute("class","form-control");
+            input_precio.setAttribute("min",500);
             input_precio.setAttribute("type","number");
             input_precio.setAttribute("name","prices[]");
             input_precio.setAttribute("required","");

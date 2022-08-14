@@ -74,11 +74,14 @@
 
                         <!-- Modal body -->
                         <div class="modal-body">
-                            <form class="w-100 m-auto" action="crud-imagenes/insert.php" method="POST" enctype="multipart/form-data">
+                            <form class="w-100 m-auto" id="form_imagen" action="crud-imagenes/insert.php" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value=<?php echo $id;?>> 
                                 <div class="col-12 mb-3">
                                     <label class="form-label" for=""> Imagen </label>
-                                    <input type="file" required name="imagen" class="form-control">
+                                    <input type="file" id="input_imagen" required name="imagen" class="form-control">
+                                 </div>
+                                 <div class="w-100 m-auto">
+                                    <p class="w-100 alert alert-warning">Por favor ingresar imágenes png , jpg</p>
                                  </div>
                                  <div class="w-100 d-flex mb-2">
                                       <button name="submit" id="boton" type="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
@@ -88,7 +91,7 @@
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button"  class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                         </div>
 
                         </div>
@@ -148,5 +151,6 @@
     </div>
     <script src="./js/menu-responsive.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./js/validar-imagenes.js" ></script>
 </body>
 </html>

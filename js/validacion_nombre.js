@@ -5,6 +5,8 @@ $(document).ready(function(){
        // let data = $("#form").serialize();
        let nombre = e.target.value;
        let nombre_sanitizado = nombre.trim();
+        nombre_sanitizado = nombre_sanitizado.toUpperCase();
+        console.log(nombre_sanitizado);
         $.ajax({
             url: "crud-camping/validarNombre.php",
             type: "POST",
@@ -16,9 +18,10 @@ $(document).ready(function(){
                 if(response.length>6){
                     let data = JSON.parse(response);
                     let nombre = data.nombre;
+                    nombre = nombre.toUpperCase();
                     let valor = e.target.value;
                     let valor_sanitizado = valor.trim();
-                    
+                    valor_sanitizado = valor_sanitizado.toUpperCase();  
                     console.log(nombre.includes(valor_sanitizado));
                    
                     if(nombre.includes(valor_sanitizado)){

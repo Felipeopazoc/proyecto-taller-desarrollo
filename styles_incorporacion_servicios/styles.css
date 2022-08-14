@@ -292,3 +292,6 @@ body{
     margin-top: 20px;
     
 }
+.service > label{
+    font-size: 18px;
+}
