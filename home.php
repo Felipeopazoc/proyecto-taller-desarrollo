@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="styles_home/styles.css">
+</head>
+<body>
+    <?php 
+        include("./conexion_bd/conexion.php");
+        
+    ?>
+    <div class="main-container">
+        <header class="header2" id="header2">
+            <div class="logo2">
+                <h3>Geocamping</h3>
+            </div>
+        </header>
+        <div class="content">
+            <div class="buscador">
+                <form class="w-75 m-auto text-white row" id="form" action="">
+                    <div class="col-4">
+                        <label class="form-label">Nombre camping</label>
+                        <input type="search" name="" class="form-control" id="nombre">
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label">Comuna</label>
+                        <select name="select_comuna" class="form-control" id="comuna">
+                            <option value="">Seleccione una Comuna</option>
+                            <?php
+                                $sql = "select * from ciudad";
+                                $resultado = mysqli_query($conn,$sql);
+                                $filas = mysqli_num_rows($resultado);
+                                if($filas){
+                                    while($comuna = $resultado->fetch_row()){
+                                    ?>
+                                        <option value="<?php echo $comuna[0]?>">
+                                            <?php echo $comuna[1] ?>
+                                        </option>
+                                    <?php
+                                    }
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label">Estado</label>
+                        <select name="" id="estado" class="form-control">
+                            <option value="">Seleccione un estado</option>
+                        <?php
+                                $sql = "select * from estado";
+                                $resultado = mysqli_query($conn,$sql);
+                                $filas = mysqli_num_rows($resultado);
+                                if($filas){
+                                    while($estado = $resultado->fetch_row()){
+                                    ?>
+                                        <option value="<?php echo $estado[0]?>">
+                                            <?php echo $estado[1] ?>
+                                        </option>
+                                    <?php
+                                    }
+                                }
+                            ?>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="camping">
+                <div class="portada">
+                    <img src="./img/portada.jpg" alt="" >
+                </div>
+                <div class="detalle">
+                     <h1>Camping prueba</h1>
+                     <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga maxime blanditiis reiciendis, quibusdam quos ab exercitationem animi magni dolore a provident quia officiis perspiciatis ex voluptate iusto voluptatum aliquam neque!
+                     </p>
+                     <cite>Avenida chillancito, Cabrero</cite>
+                     <button class="mt-1 btn btn-primary">Ver más</button>
+                </div>
+                
+            </div>
+            <?php
+                $sql3 = "select * from camping c, ciudad ci where c.cod_ciudad = ci.id_ciudad";
+                $resultado = mysqli_query($conn,$sql3);
+                $filas = mysqli_num_rows($resultado);
+                if($filas){
+                    while ($camping = $resultado->fetch_row()){
+                        ?>
+                            <div class="camping">
+                                <div class="portada">
+                                    <img src="./img/portada.jpg" alt="">
+                                </div>
+                                <div class="detalle">
+                                    <h1><?php echo $camping[1]?></h1>
+                                    <p><?php echo $camping[3] ?></p>
+                                    <cite><?php echo $camping[4].", ".$camping[12]?></cite>
+                                    <a class="btn btn-primary" href="detalle_camping.php?id=<?php echo $camping[0]?>">Ver más</a>
+                                </div>
+                                
+                            </div>
+                        <?php
+                    }
+                }
+            ?>
+           
+        </div>  
+    </div>
+    <script src="./js/buscador.js"></script>
+</body>
+</html>

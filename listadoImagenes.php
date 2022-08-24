@@ -141,7 +141,7 @@
                     
                     <div class="w-75 m-auto d-flex">
                         <!-- <a class="btn btn-danger" href="incorporacion_servicios.php?id=<?php echo $id?>">Incorporación de servicios</a> -->
-                        <a class="btn btn-success" href="index.php">Finalizar registro</a>
+                        <a class="btn btn-success" href="home.php">Finalizar registro</a>
                     </div>
                      
             </div>
