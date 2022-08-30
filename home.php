@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    
     <link rel="stylesheet" href="styles_home/styles.css">
 </head>
 <body>
@@ -21,17 +22,29 @@
             <div class="logo2">
                 <h3>Geocamping</h3>
             </div>
+            <div class="barra">
+                <nav class="nav">
+                    <ul class="ul">
+                        <li class="li">
+                            <a href="#">Inicio</a>
+                        </li>
+                        <li class="li">
+                        <a href="index.php">Registrar camping</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <div class="content">
             <div class="buscador">
-                <form class="w-75 m-auto text-white row" id="form" action="">
+                <form class="w-75 m-auto text-white row" id="form" method="POST" action="buscar.php">
                     <div class="col-4">
                         <label class="form-label">Nombre camping</label>
-                        <input type="search" name="" class="form-control" id="nombre">
+                        <input type="search" name="nombre" class="form-control" id="nombre">
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                         <label class="form-label">Comuna</label>
-                        <select name="select_comuna" class="form-control" id="comuna">
+                        <select name="comuna" class="form-control" id="comuna">
                             <option value="">Seleccione una Comuna</option>
                             <?php
                                 $sql = "select * from ciudad";
@@ -51,7 +64,7 @@
                     </div>
                     <div class="col-3">
                         <label class="form-label">Estado</label>
-                        <select name="" id="estado" class="form-control">
+                        <select name="estado" id="estado" class="form-control">
                             <option value="">Seleccione un estado</option>
                         <?php
                                 $sql = "select * from estado";
@@ -69,8 +82,12 @@
                             ?>
                         </select>
                     </div>
+                    <div class="col-2 d-flex align-items-end">
+                        <button type="submit" id="buscador" class="btn btn-primary mt-3">Buscar</button>
+                    </div>
                 </form>
             </div>
+        <div id="campings">
             <div class="camping">
                 <div class="portada">
                     <img src="./img/portada.jpg" alt="" >
@@ -85,6 +102,7 @@
                 </div>
                 
             </div>
+            
             <?php
                 $sql3 = "select * from camping c, ciudad ci where c.cod_ciudad = ci.id_ciudad";
                 $resultado = mysqli_query($conn,$sql3);
@@ -108,7 +126,7 @@
                     }
                 }
             ?>
-           
+           </div>
         </div>  
     </div>
     <script src="./js/buscador.js"></script>

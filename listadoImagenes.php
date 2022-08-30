@@ -81,7 +81,7 @@
                                     <input type="file" id="input_imagen" required name="imagen" class="form-control">
                                  </div>
                                  <div class="w-100 m-auto">
-                                    <p class="w-100 alert alert-warning">Por favor ingresar imágenes png , jpg</p>
+                                    <p id="mensaje" class="w-100 alert alert-warning">Por favor ingresar imágenes png , jpg</p>
                                  </div>
                                  <div class="w-100 d-flex mb-2">
                                       <button name="submit" id="boton" type="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
@@ -99,6 +99,18 @@
                 </div>
 
                 <!--Fin del modal-->
+                <form class="w-75 m-auto" action="">
+                    <div class="col-10">
+                        <label>Imagen portada camping</label>
+                        <input type="file" class="form-control">
+                    </div>
+                </form>
+                <form class="w-75 m-auto" action="">
+                    <div class="col-10">
+                        <label>Imagenes de camping</label>
+                        <input type="file" class="form-control">
+                    </div>
+    </form>
 
                         <?php
                             $sql = "select * from imagenes where id_camping = $id";

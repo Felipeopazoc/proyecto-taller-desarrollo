@@ -5,25 +5,18 @@ $(document).ready(()=>{
         let valor = document.getElementById("input_imagen").value;
        // console.log(valor.value);
        $("#boton").prop("disabled",true);
+        $("#mensaje").text("Por favor suba imágenes png , jpg");
+        $("#mensaje").removeClass("alert alert-warning")
+        $("#mensaje").addClass("alert alert-danger")
        if(valor.includes("png") || valor.includes("jpg")){
            $("#boton").prop("disabled",false);
+           $("#mensaje").text("Imagen cargada correctamente");
+           $("#mensaje").removeClass("alert alert-danger")
+           $("#mensaje").addClass("alert alert-primary")
        }else{
            $("#boton").prop("disabled",true);
+           $("#mensaje").text("Por favor suba imágenes png , jpg");
        }
     });
-    /*
-    $("#form_imagen").change(()=>{
-        let valor_input = document.getElementById("input_imagen");
-        let string_input = valor_input.value;
-        console.log(string_input);
-        $("#boton").prop("disabled",false);
-        if(string_input.includes("png") || string_input.includes("jpg")){
-            $("#boton").prop("disabled",false);
-        }else{
-            $("#boton").prop("disabled",true);
-        }
-
-
-    });
-    */
+ 
 });

@@ -1,21 +1,33 @@
-$(document).ready(()=>{
-
-//$("#form").change(()=>{
-    $("#nombre").keyup((e)=>{
-        let nombre = e.target.value;
+/*$(document).ready(()=>{ 
+   $("#buscador").click((e)=>{
+        e.preventDefault();
     
-        if(nombre.length == 0){
-            console.log("No ha escrito nada");
-        }
+       
+            let data = $("#form").serialize();
+            $.ajax({
+                url: "js/buscar.php",
+                type: "POST",
+                async: true,
+                data: data,
+                success: function(response){
+                    //console.log(response.trim());
+                    response = response.trim();
+                    if(response != "error"){
+                        let data = JSON.parse(response);
+                        let campings = document.getElementById("campings");
+                        console.log(campings);
+                      
+                        data.forEach(element => {
+                            console.log(element);
+                        });
+                    }else{
+                        console.log("No encontró nada");
+                        
+                    }
+                }
+            })
         
-     });
-     $("#comuna").change((e)=>{
-        console.log (e.target.value); 
-     });
-     $("#estado").change((e)=>{
-        console.log (e.target.value); 
-     });
 
-    });
-   
-//});
+   });
+});
+*/

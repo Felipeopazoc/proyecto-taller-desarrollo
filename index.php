@@ -39,7 +39,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <ul class="nav-menu">
-                    <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i> Home</a></a></li>
+                    <li class="nav-menu-item"><a href="home.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i>Inicio</a></a></li>
                     <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
                     <!-- <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
                 </ul>
@@ -51,7 +51,7 @@
             <div class="barra-navegacion" id="navbar">
                 <nav class="navegacion">
                     <ul class="ul">
-                        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="home.php"><i class="fa-solid fa-house"></i> Inicio</a></li>
                         <li><a href="#"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
                         <!-- <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
                     </ul>
