@@ -95,12 +95,17 @@
                     <input type="hidden" name="id_camping" id="id_camping" value="<?php echo $id_camping; ?>">
                         <?php
                         $sql = "select * from servicio";
+                        $sql2 = "select c.id_camping ,t.id_servicio, s.nombre_servicio, t.precio from camping c, tiene t, servicio s where c.id_camping = t.id_camping and t.id_servicio = s.id_servicio and c.id_camping = $id_camping";
                         $resultado = mysqli_query($conn,$sql);
+                        $resultado2 = mysqli_query($conn,$sql2);
                         $filas = mysqli_num_rows($resultado);
-                        if($filas){
+                        
+                        $filas2 = mysqli_num_rows($resultado2);
+
+                        if($filas > 0){
                             while($servicio = $resultado->fetch_row()){
                             ?>
-                            <div class="col-12 service text-center mb-3">
+                            <div class="col-4 service text-center mb-3">
                                 <label for=""><?php echo $servicio[1] ?></label>
                                 <input type="checkbox" name="servicios[]" value="<?php echo $servicio[0] ?>">
                             </div>
@@ -137,5 +142,6 @@
     <script src="js/validacion-servicios.js"></script>
     <script src="js/menu-responsive.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/checked.js"></script>
 </body>
 </html>

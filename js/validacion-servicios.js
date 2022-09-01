@@ -27,7 +27,7 @@ $(document).ready(()=>{
         boton_enviar.setAttribute("id","boton");
     
         let valor_id_camping = document.getElementById("id_camping").value;
-        console.log(valor_id_camping);
+       // console.log(valor_id_camping);
 
         let input_id_camping  = document.createElement("input");
         input_id_camping.setAttribute("type","hidden");
@@ -42,7 +42,6 @@ $(document).ready(()=>{
         checkboxs.forEach((checkbox)=>{
             if(checkbox.checked){
                 checkeds.push(checkbox);
-                
             }
         })
         if(checkeds.length == 0){
@@ -105,7 +104,7 @@ $(document).ready(()=>{
                         let data = JSON.parse(response);
                        // console.log("ID="+checked.value+" Nombre="+data.nombre_servicio);
                        label.innerText="Nombre servicio";
-                       console.log(data);
+                      // console.log(data);
                        input.setAttribute("value",data.nombre_servicio);
                        input_hidden.setAttribute("value",data.id_servicio);
                        input.setAttribute("id",contador);

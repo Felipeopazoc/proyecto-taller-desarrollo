@@ -58,7 +58,7 @@
             <div class="panel-admin">
                 <div class="box">
                     <h1>Listado de imágenes de camping seleccionado</h1>
-                    <button type="button" class="boton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar una imagen</button>   
+                    <button type="button" class="boton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar portada camping</button>   
                 </div>
                  
                 <!--Inicio de modal-->
@@ -99,12 +99,6 @@
                 </div>
 
                 <!--Fin del modal-->
-                <form class="w-75 m-auto" action="">
-                    <div class="col-10">
-                        <label>Imagen portada camping</label>
-                        <input type="file" class="form-control">
-                    </div>
-                </form>
                 <form class="w-75 m-auto" action="">
                     <div class="col-10">
                         <label>Imagenes de camping</label>
