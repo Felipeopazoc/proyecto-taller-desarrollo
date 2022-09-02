@@ -48,7 +48,7 @@
             <div class="barra-navegacion">
                 <nav class="navegacion">
                     <ul class="ul">
-                        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="home.php"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a href="index.php"><i class="fa-solid fa-registered"></i> Registro camping</a></li>
                         <!-- <li><a href="mostrar_campings.php"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
                     </ul>
@@ -58,7 +58,7 @@
             <div class="panel-admin">
                 <div class="box">
                     <h1>Listado de imágenes de camping seleccionado</h1>
-                    <button type="button" class="boton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar portada camping</button>   
+                    <button type="button" id="ingresar" class="boton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar portada camping</button>   
                 </div>
                  
                 <!--Inicio de modal-->
@@ -78,13 +78,13 @@
                                 <input type="hidden" name="id" value=<?php echo $id;?>> 
                                 <div class="col-12 mb-3">
                                     <label class="form-label" for=""> Imagen </label>
-                                    <input type="file" id="input_imagen" required name="imagen" class="form-control">
+                                    <input type="file" id="input_imagen2" required name="imagen" class="form-control">
                                  </div>
                                  <div class="w-100 m-auto">
-                                    <p id="mensaje" class="w-100 alert alert-warning">Por favor ingresar imágenes png , jpg</p>
+                                    <p id="mensaje2" class="w-100 alert alert-warning">Por favor ingresar imágenes png , jpg</p>
                                  </div>
                                  <div class="w-100 d-flex mb-2">
-                                      <button name="submit" id="boton" type="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
+                                      <button name="submit" id="boton2" type="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
                                  </div>
                             </form>
                         </div>
@@ -99,22 +99,74 @@
                 </div>
 
                 <!--Fin del modal-->
-                <form class="w-75 m-auto" action="">
-                    <div class="col-10">
+                <form enctype="multipart/form-data" class="w-75 m-auto row" action="crud-imagenes/insert.php" method="post">
+                    <input type="hidden" name="id" value=<?php echo $id;?>> 
+                    <div class="col-9">
                         <label>Imagenes de camping</label>
-                        <input type="file" class="form-control">
+                        <input type="file" required id="input_imagen" name="imagen_portada" class="form-control">        
                     </div>
-    </form>
-
-                        <?php
-                            $sql = "select * from imagenes where id_camping = $id";
+                    <div class="w-100 m-auto">
+                            <p id="mensaje" class="w-75 m-auto alert mt-2 alert-warning">Por favor ingresar imágenes png , jpg</p>
+                    </div>
+                    <div class="col-3 d-flex align-items-center mt-4">
+                        <input id="boton" name="portada" type="submit" class="btn btn-primary" value="Subir imagen">
+                    </div>
+                </form>
+                <?php
+                            
+                            $sql = "select * from imagenes where id_camping = $id and is_portada = 1 ";
                             $resultado = mysqli_query($conn,$sql);
 
                             $filas = mysqli_num_rows($resultado);
 
                             if($filas){
                                 ?>
-                                    
+                                <script>
+                                    $(document).ready(()=>{
+                                        $("#ingresar").prop("disabled",true);
+                                    });
+                                </script>
+                                <h1 class="h1">Imagen portada</h1>
+                                <table class="w-100 mt-2 ml-2 table table-striped">
+                                        <thead>
+                                            <th>Imagen</th>
+                                            <th>Acciones</th>
+                                        </thead>
+                                        <tbody>
+                                <?php
+                                while($imagen = $resultado->fetch_assoc()){
+                                    ?>
+                                     <tr>
+                                         <td class=""><?php echo '<img width=400px height=300px src="data:image/jpg;base64,'.base64_encode( $imagen['imagen'] ).'"/>';  ?></td>
+                                         <td><a class="mt-4 btn btn-danger" href="crud-imagenes/delete.php?idImagen=<?php echo $imagen["id_imagen"]."&id_camping=$id"; ?>"><i class="fa-solid fa-trash-can"></i></a></td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
+                                      </tbody>
+                                    </table>
+                                <?php
+
+                            }else{
+                                ?>
+                                    <p style="z-index:-1" class="alert alert-danger w-75 text-center mt-2">No hay imagen de portada para este camping</p>
+                                <?php
+
+                            }
+                            
+                        
+                        ?>
+                        <?php
+                    
+                            
+                            $sql = "select * from imagenes where id_camping = $id and is_portada = 0 ";
+                            $resultado = mysqli_query($conn,$sql);
+
+                            $filas = mysqli_num_rows($resultado);
+
+                            if($filas){
+                                ?>
+                                  <h1 class="h1">Imágenes camping</h1>  
                                 <table class="w-100 mt-2 ml-2 table table-striped">
                                         <thead>
                                             <th>Imagen</th>

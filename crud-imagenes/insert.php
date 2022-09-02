@@ -13,5 +13,17 @@
         $conn->query($sql);
         header("Location: ../listadoImagenes.php?id=$id");
     }
+    if(isset($_POST["portada"])){
+        $id = $_POST["id"];
+        $check = getimagesize($_FILES["imagen_portada"]["tmp_name"]);
+
+        if($check !== false){
+            $image = $_FILES['imagen_portada']['tmp_name'];
+            $imageContent =  addslashes(file_get_contents($image));
+        }
+        $sql = "insert into imagenes values (null,'$imageContent',$id,'0')";
+        $conn->query($sql);
+        header("Location: ../listadoImagenes.php?id=$id");
+    }
 
 ?>

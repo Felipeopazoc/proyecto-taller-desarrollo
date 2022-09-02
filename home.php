@@ -38,10 +38,7 @@
         <div class="content">
             <div class="buscador">
                 <form class="w-75 m-auto text-white row" id="form" method="POST" action="buscar.php">
-                    <div class="col-4">
-                        <label class="form-label">Nombre camping</label>
-                        <input type="search" name="nombre" class="form-control" id="nombre">
-                    </div>
+                    
                     <div class="col-3">
                         <label class="form-label">Comuna</label>
                         <select name="comuna" class="form-control" id="comuna">
@@ -55,6 +52,26 @@
                                     ?>
                                         <option value="<?php echo $comuna[0]?>">
                                             <?php echo $comuna[1] ?>
+                                        </option>
+                                    <?php
+                                    }
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label">Servicios</label>
+                        <select class="form-control" name="servicio" id="servicio">
+                            <option value="">Seleccione un servicio</option>
+                            <?php
+                                $sql = "select * from servicio";
+                                $resultado = mysqli_query($conn,$sql);
+                                $filas = mysqli_num_rows($resultado);
+                                if($filas){
+                                    while($estado = $resultado->fetch_row()){
+                                    ?>
+                                        <option value="<?php echo $estado[0]?>">
+                                            <?php echo $estado[1] ?>
                                         </option>
                                     <?php
                                     }

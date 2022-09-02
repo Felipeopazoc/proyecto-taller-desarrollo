@@ -39,25 +39,28 @@
            <?php
     include("conexion_bd/conexion.php");
     if(!empty($_POST)){
-        $nombre = $_POST["nombre"];
-        $nombre = htmlspecialchars(strip_tags($nombre));
+        $servicio = $_POST["servicio"];
+        $servicio = htmlspecialchars(strip_tags($servicio));
 
         $comuna = $_POST["comuna"];
         $estado = $_POST["estado"];
 
 
-        if(!empty($nombre) && !empty($comuna) && !empty($estado)){
-            $sql = "select * from camping c, ciudad ci, estado e where c.cod_ciudad = ci.id_ciudad
+        if(!empty($servicio) && !empty($comuna) && !empty($estado)){
+            $sql = "select distinct * from camping c, ciudad ci, estado e, tiene t 
+            where c.id_camping = t.id_camping
+            and ci.id_ciudad = c.cod_ciudad
             and c.id_estado = e.id_estado
-            and c.nombre like '%$nombre%'
+            
             and e.id_estado = $estado
-            and ci.id_ciudad = $comuna";
+            and ci.id_ciudad = $comuna
+            and t.id_servicio = $servicio";
             $resultado = mysqli_query($conn,$sql);
             $filas = mysqli_num_rows($resultado);
             if($filas > 0){
                 while ($camping = $resultado->fetch_row()){
                     ?>
-                        <div class="camping">
+                        <div class="camping mt-2">
                             <div class="portada">
                                 <img src="./img/portada.jpg" alt="">
                             </div>
@@ -78,9 +81,12 @@
             }
 
         }
-        if(!empty($nombre)){
-            $sql = "select * from camping c 
-            where c.nombre like '%$nombre%'";
+        
+        if(!empty($servicio) && empty($comuna && empty($estado))){
+            $sql = "select * from camping c, servicio s, tiene t 
+            where c.id_camping = t.id_camping
+            and s.id_servicio = t.id_servicio
+            and t.id_servicio = 1";
             $resultado = mysqli_query($conn,$sql);
             $filas = mysqli_num_rows($resultado);
             if($filas > 0){
@@ -107,7 +113,7 @@
             }
         }
         
-        if(!empty($comuna)){
+        if(!empty($comuna) && empty($servicio) && empty($estado)){
             $sql = "select * from camping c, ciudad ci 
             where c.cod_ciudad = ci.id_ciudad
             and c.cod_ciudad = $comuna";
@@ -136,7 +142,7 @@
                 <?php
             }
         }
-        if(!empty($estado)){
+        if(!empty($estado) && empty($comuna) && empty($servicio)){
             $sql = "select * from camping c, estado e
             where c.id_estado = e.id_estado
             and e.id_estado = $estado";
@@ -165,6 +171,7 @@
             <?php
             }
         }
+        
     }
     
 
