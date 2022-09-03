@@ -58,8 +58,12 @@
             $resultado = mysqli_query($conn,$sql);
             $filas = mysqli_num_rows($resultado);
             if($filas > 0){
+                ?>
+                     <h2 class="text-white text-center">Resultados de búsqueda</h2>
+                <?php
                 while ($camping = $resultado->fetch_row()){
                     ?>
+                       
                         <div class="camping mt-2">
                             <div class="portada">
                                 <img src="./img/portada.jpg" alt="">
@@ -76,7 +80,7 @@
                 }
             }else{
                 ?>
-                    <h1>No hay resultados de búsqueda</h1>
+                    <h1 class="text-white text-center">No hay resultados de búsqueda</h1>
                 <?php
             }
 
@@ -108,7 +112,7 @@
                 }
             }else{
                 ?>
-                <h1>No hay resultados de búsqueda</h1>
+                <h1 class="text-white text-center">No hay resultados de búsqueda</h1>
                 <?php
             }
         }
@@ -138,7 +142,7 @@
                 }
             }else{
                 ?>
-                    <h1>No hay resultados de búsqueda</h1>
+                    <h1 class="text-white text-center">No hay resultados de búsqueda</h1>
                 <?php
             }
         }
@@ -167,7 +171,7 @@
                 }
             }else{
                 ?>
-                <h1>No hay resultados de búsqueda</h1>
+               <h1 class="text-white text-center">No hay resultados de búsqueda</h1>
             <?php
             }
         }

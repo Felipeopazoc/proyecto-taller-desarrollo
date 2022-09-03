@@ -102,6 +102,9 @@
                     <div class="col-2 d-flex align-items-end">
                         <button type="submit" id="buscador" class="btn btn-primary mt-3">Buscar</button>
                     </div>
+                    <div id="mensaje_alerta" class="w-75 m-auto mt-2">
+                            
+                    </div>
                 </form>
             </div>
         <div id="campings">
@@ -126,10 +129,22 @@
                 $filas = mysqli_num_rows($resultado);
                 if($filas){
                     while ($camping = $resultado->fetch_row()){
+                        $sql4 = "select * from  imagenes i , camping c where c.id_camping = i.id_camping 
+                        and c.id_camping = $camping[0] and i.is_portada = 1";
+                        $resultado2 = mysqli_query($conn,$sql4);
+                        $filas2 = mysqli_num_rows($resultado2);
                         ?>
                             <div class="camping">
                                 <div class="portada">
-                                    <img src="./img/portada.jpg" alt="">
+                        <?php
+                        if($filas2){
+                            while($imagen = $resultado2->fetch_row()){
+                               echo '<img src="data:image/jpg;base64,'.base64_encode( $imagen[1] ).'"/>';
+                            }
+                        }else{
+                            echo "Sin portada";
+                        }
+                        ?>
                                 </div>
                                 <div class="detalle">
                                     <h1><?php echo $camping[1]?></h1>
@@ -147,5 +162,6 @@
         </div>  
     </div>
     <script src="./js/buscador.js"></script>
+    <script src="./js/validar_buscador.js"></script>
 </body>
 </html>

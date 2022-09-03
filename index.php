@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-lg-7 mb-2 ">
                         <label class="form-label" for="">Descripción: </label>
-                        <textarea maxlength="20" class="form-control" id="descripcion" placeholder="Breve descripción del camping a registrar" name="descripcion" required ></textarea>
+                        <textarea maxlength="100" class="form-control" id="descripcion" placeholder="Breve descripción del camping a registrar" name="descripcion" required ></textarea>
                         <div class="invalid-feedback">Por favor ingrese una descripción.</div>
                     </div>
                     <div class="col-lg-4 col-md-12 mb-md-2 col-sm-6 ">
