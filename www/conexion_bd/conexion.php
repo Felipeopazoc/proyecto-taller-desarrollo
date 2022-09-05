@@ -1,7 +1,6 @@
 
 <?php
 try{
-
 //Credenciales para la conexion a phpmyadmin
 $host = "mysqltrans.face.ubiobio.cl";
 $dbname= "G53taller_bd";
@@ -14,5 +13,24 @@ $conn->set_charset("utf8");
 }catch(Exception $e){
 echo "Error: ".$e->getMessage();
 }
+
+
+/*
+try{
+
+//Credenciales para la conexion contenedor docker
+$host = "db";
+$dbname= "dbname";
+$username= "root";
+$password = "test";
+date_default_timezone_set('America/Santiago');
+$conn = new mysqli($host,$username,$password,$dbname);
+$conn->set_charset("utf8");
+
+}catch(Exception $e){
+echo "Error: ".$e->getMessage();
+}
+*/
+
 
 ?>
