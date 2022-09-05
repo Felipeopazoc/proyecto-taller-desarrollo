@@ -108,21 +108,7 @@
                 </form>
             </div>
         <div id="campings">
-            <div class="camping">
-                <div class="portada">
-                    <img src="./img/portada.jpg" alt="" >
-                </div>
-                <div class="detalle">
-                     <h1>Camping prueba</h1>
-                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga maxime blanditiis reiciendis, quibusdam quos ab exercitationem animi magni dolore a provident quia officiis perspiciatis ex voluptate iusto voluptatum aliquam neque!
-                     </p>
-                     <cite>Avenida chillancito, Cabrero</cite>
-                     <button class="mt-1 btn btn-primary">Ver más</button>
-                </div>
-                
-            </div>
-            
+         
             <?php
                 $sql3 = "select * from camping c, ciudad ci where c.cod_ciudad = ci.id_ciudad";
                 $resultado = mysqli_query($conn,$sql3);
