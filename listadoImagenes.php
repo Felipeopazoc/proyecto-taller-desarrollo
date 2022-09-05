@@ -58,9 +58,12 @@
             <div class="panel-admin">
                 <div class="box">
                     <h1>Listado de imágenes de camping seleccionado</h1>
-                    <button type="button" id="ingresar" class="boton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar portada camping</button>   
+                    <button style="z-index:-1" type="button" id="ingresar" class="boton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar portada camping</button>   
                 </div>
-                 
+                <div class="w-75 mt-3 m-auto d-flex">
+                        <!-- <a class="btn btn-danger" href="incorporacion_servicios.php?id=<?php echo $id?>">Incorporación de servicios</a> -->
+                        <a class="btn btn-success mb-2" href="home.php">Finalizar registro</a>
+                    </div>
                 <!--Inicio de modal-->
                 <div class="modal w-100" id="myModal">
                     <div class="modal-dialog">
@@ -84,7 +87,7 @@
                                     <p id="mensaje2" class="w-100 alert alert-warning">Por favor ingresar imágenes png , jpg</p>
                                  </div>
                                  <div class="w-100 d-flex mb-2">
-                                      <button name="submit" id="boton2" type="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
+                                      <button style="z-index:-1" name="submit" id="boton2" type="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
                                  </div>
                             </form>
                         </div>
@@ -101,12 +104,12 @@
                 <!--Fin del modal-->
                 <form enctype="multipart/form-data" class="w-75 m-auto row" action="crud-imagenes/insert.php" method="post">
                     <input type="hidden" name="id" value=<?php echo $id;?>> 
-                    <div class="col-9">
+                    <div class="col-12 col-md-10 col-sm-11">
                         <label>Imagenes de camping</label>
                         <input type="file" required id="input_imagen" name="imagen_portada" class="form-control">        
                     </div>
                     <div class="w-100 m-auto">
-                            <p id="mensaje" class="w-75 m-auto alert mt-2 alert-warning">Por favor ingresar imágenes png , jpg</p>
+                            <p style="z-index:-1" id="mensaje" class="w-75 m-auto alert mt-2 alert-warning">Por favor ingresar imágenes png , jpg</p>
                     </div>
                     <div class="col-3 d-flex align-items-center mt-4">
                         <input id="boton" name="portada" type="submit" class="btn btn-primary" value="Subir imagen">
@@ -127,7 +130,7 @@
                                     });
                                 </script>
                                 <h1 class="h1">Imagen portada</h1>
-                                <table class="w-100 mt-2 ml-2 table table-striped">
+                                <table class="tabla mt-2 ml-2 table table-striped">
                                         <thead>
                                             <th>Imagen</th>
                                             <th>Acciones</th>
@@ -167,7 +170,7 @@
                             if($filas){
                                 ?>
                                   <h1 class="h1">Imágenes camping</h1>  
-                                <table class="w-100 mt-2 ml-2 table table-striped">
+                                <table class="tabla mt-2 ml-2 table table-striped">
                                         <thead>
                                             <th>Imagen</th>
                                             <th>Acciones</th>
@@ -197,10 +200,7 @@
                         
                         ?>
                     
-                    <div class="w-75 m-auto d-flex">
-                        <!-- <a class="btn btn-danger" href="incorporacion_servicios.php?id=<?php echo $id?>">Incorporación de servicios</a> -->
-                        <a class="btn btn-success" href="home.php">Finalizar registro</a>
-                    </div>
+                   
                      
             </div>
         </div>

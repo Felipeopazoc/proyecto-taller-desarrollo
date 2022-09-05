@@ -11,6 +11,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     
     <link rel="stylesheet" href="styles_home/styles.css">
+    <link rel="stylesheet" href="styles_home/responsive.css">
 </head>
 <body>
     <?php 
@@ -35,11 +36,24 @@
                 </nav>
             </div>
         </header>
+        <header class="header" id="header">
+            <nav class="nav">
+                <a href="" class="logo nav-linked">Geocamping</a>
+                <button class="nav-toggle" aria-label="">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a href="home.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i>Inicio</a></a></li>
+                    <li class="nav-menu-item"><a href="index.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
+                    <!-- <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
+                </ul>
+            </nav>
+        </header>
         <div class="content">
             <div class="buscador">
                 <form class="w-75 m-auto text-white row" id="form" method="POST" action="buscar.php">
                     
-                    <div class="col-3">
+                    <div class="col-lg-4 col-md-4 col-sm-10">
                         <label class="form-label">Comuna</label>
                         <select name="comuna" class="form-control" id="comuna">
                             <option value="">Seleccione una Comuna</option>
@@ -59,7 +73,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="col-4">
+                    <div class="col-lg-3 col-md-4 col-sm-10">
                         <label class="form-label">Servicios</label>
                         <select class="form-control" name="servicio" id="servicio">
                             <option value="">Seleccione un servicio</option>
@@ -79,7 +93,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-4 col-sm-10">
                         <label class="form-label">Estado</label>
                         <select name="estado" id="estado" class="form-control">
                             <option value="">Seleccione un estado</option>
@@ -149,5 +163,7 @@
     </div>
     <script src="./js/buscador.js"></script>
     <script src="./js/validar_buscador.js"></script>
+    <script src="./js/menu-responsive.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 </html>

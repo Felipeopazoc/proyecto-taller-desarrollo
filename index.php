@@ -40,7 +40,7 @@
                 </button>
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a href="home.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i>Inicio</a></a></li>
-                    <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
+                    <li class="nav-menu-item"><a href="index.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
                     <!-- <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
                 </ul>
             </nav>

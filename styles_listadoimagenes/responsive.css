@@ -28,3 +28,9 @@
         width: 60%;
      }
  }
+
+ @media(max-width:694px){
+    .tabla{
+        width: 40% !important;
+    }
+ }

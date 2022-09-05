@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="styles_detalle/styles.css">
+    <link rel="stylesheet" href="styles_detalle/responsive.css">
+    <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php 
@@ -27,6 +29,19 @@
                     <li><a href="home.php">Registrar camping</a></li>
                 </ul>
             </div>
+        </header>
+        <header class="header" id="header">
+            <nav class="nav">
+                <a href="" class="logo nav-linked">Geocamping</a>
+                <button class="nav-toggle" aria-label="">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a href="home.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-house"></i>  Inicio</a></a></li>
+                    <li class="nav-menu-item"><a href="index.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-registered"></i> Registro camping</a></a></li>
+                    <!-- <li class="nav-menu-item"><a href="mostrar_campings.php" class="nav-menu-link nav-linked"><i class="fa-solid fa-campground"></i> Listado de campings</a></li> -->
+                </ul>
+            </nav>
         </header>
         <div class="content">
             <!--Aquí va el detalle del camping-->
@@ -104,5 +119,7 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/10a72ae3cd.js" crossorigin="anonymous"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/menu-responsive.js"></script>
 </body>
 </html>
