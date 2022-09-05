@@ -58,7 +58,7 @@
             <div class="panel-admin">
                 <div class="box">
                     <h1>Listado de imágenes de camping seleccionado</h1>
-                    <button style="z-index:-1" type="button" id="ingresar" class="boton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar portada camping</button>   
+                    <button type="button" id="ingresar" class="boton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ingresar portada camping</button>   
                 </div>
                 <div class="w-75 mt-3 m-auto d-flex">
                         <!-- <a class="btn btn-danger" href="incorporacion_servicios.php?id=<?php echo $id?>">Incorporación de servicios</a> -->
@@ -87,7 +87,7 @@
                                     <p id="mensaje2" class="w-100 alert alert-warning">Por favor ingresar imágenes png , jpg</p>
                                  </div>
                                  <div class="w-100 d-flex mb-2">
-                                      <button style="z-index:-1" name="submit" id="boton2" type="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
+                                      <button name="submit" id="boton2" type="submit" class=" w-75 m-auto btn btn-success">Enviar</button>
                                  </div>
                             </form>
                         </div>
