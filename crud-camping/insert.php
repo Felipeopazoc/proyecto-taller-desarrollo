@@ -12,6 +12,7 @@
         $telefono = $_POST["telefono"];
         $mes_inicio = $_POST["inicio"];
         $mes_fin = $_POST["fin"];
+        $comuna = $_POST["select_comuna"];
         $id_random = rand(1,100000);
         //Sanitizamos las variables
      
@@ -48,7 +49,7 @@
         
       
         
-        $sql = "insert into camping values($id_random,'$nombre',$cantidad,'$descripcion','$direccion','$correo',$telefono,$mes_inicio,$mes_fin,1,1)";
+        $sql = "insert into camping values($id_random,'$nombre',$cantidad,'$descripcion','$direccion','$correo',$telefono,$mes_inicio,$mes_fin,$comuna,1)";
 
         if(mysqli_query($conn,$sql)){
             echo $id_random;
