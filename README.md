@@ -44,3 +44,16 @@ Para ejecutar el software en docker ejecute
   * Usuario: "root"
   * Contraseña: "test"
   * Nombre base de datos: "dbname"
+
+## Instalación proyecto servidor de producción FACE
+
+1. Clonar el repositorio
+2. Entrar a la carpeta proyecto-taller-de-desarrollo
+  ```bash
+    cd proyecto-taller-de-desarrollo
+  ```
+3. Mover la carpeta www a la ruta /var/ww/html
+  ```bash
+     mv www /var/www/html
+  ```
+4. Dirigirse en el navegador a la dirección de red http://146.83.198.35:1068/
